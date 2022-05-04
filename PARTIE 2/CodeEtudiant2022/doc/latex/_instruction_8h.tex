@@ -1,0 +1,37 @@
+\hypertarget{_instruction_8h}{}\doxysection{include/\+Instruction.h File Reference}
+\label{_instruction_8h}\index{include/Instruction.h@{include/Instruction.h}}
+
+
+\mbox{\hyperlink{class_instruction}{Instruction}} class.  
+
+
+{\ttfamily \#include $<$Operand.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$OPExpression.\+h$>$}\newline
+{\ttfamily \#include $<$OPImmediate.\+h$>$}\newline
+{\ttfamily \#include $<$OPLabel.\+h$>$}\newline
+{\ttfamily \#include $<$Line.\+h$>$}\newline
+{\ttfamily \#include $<$OPRegister.\+h$>$}\newline
+{\ttfamily \#include $<$Enum\+\_\+type.\+h$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdep}{dep}}
+\item 
+class \mbox{\hyperlink{class_instruction}{Instruction}}
+\begin{DoxyCompactList}\small\item\em class representing an instruction which herited by \mbox{\hyperlink{class_line}{Line}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_instruction_8h_adb61f3851e290d270a30dee1d90fe97b}\label{_instruction_8h_adb61f3851e290d270a30dee1d90fe97b}} 
+\mbox{\hyperlink{class_instruction}{Instruction}} $\ast$ {\bfseries get\+Inst} (\mbox{\hyperlink{class_line}{Line}} $\ast$l)
+\begin{DoxyCompactList}\small\item\em returns the instruction associated to the line, if the line is an instruction, nullptr otherwise \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_instruction_8h_a51ba1f2ef8910a3a40a3bf9923286e7c}\label{_instruction_8h_a51ba1f2ef8910a3a40a3bf9923286e7c}} 
+int {\bfseries delai} (t\+\_\+\+Inst t1, t\+\_\+\+Inst t2)
+\begin{DoxyCompactList}\small\item\em retourne le délai induit par une dépendance RAW entre i1 et i2 (i1 -\/\texorpdfstring{$>$}{>} i2) avec i1 de type t1 et i2 de type t2 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_instruction}{Instruction}} class. 
+

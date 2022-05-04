@@ -1,0 +1,42 @@
+\hypertarget{_operand_8h_source}{}\doxysection{Operand.\+h}
+\label{_operand_8h_source}\index{include/Operand.h@{include/Operand.h}}
+\mbox{\hyperlink{_operand_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_Operand\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_Operand\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <Enum\_type.h>}}
+\DoxyCodeLine{12 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_operand}{Operand}}\{}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 public  :}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{25     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_operand_aa6ef1ffa183381edb413f9b93782a67b}{\string~Operand}}()\{\};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{30     \textcolor{keyword}{virtual} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_operand_a2bf3ad8b34d39cb35ff743ffcc0f4675}{get\_op}}()=0;}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{35     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_operand_a0895c39d7b97ea56f074d242e8232c78}{set\_op}}(\textcolor{keywordtype}{string})=0;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{41     \textcolor{keyword}{virtual}  t\_OpType \mbox{\hyperlink{class_operand_afd469e305a467e2574f34ac9bd6c62b0}{get\_op\_type}}()=0;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{47     \textcolor{keyword}{virtual} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_operand_a28aed96d5fafee66be81c30c1435ad00}{to\_string}}()=0;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{53     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_operand_a12ccf172b496bc2fee04f732d144641b}{isOPLabel}}()\{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_operand_afd469e305a467e2574f34ac9bd6c62b0}{get\_op\_type}}() == t\_OpType::Label;\};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{58     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_operand_a5c596cb4bdb24227118697d33d9833eb}{isOPRegister}}()\{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_operand_afd469e305a467e2574f34ac9bd6c62b0}{get\_op\_type}}() == t\_OpType::Reg;\};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{63     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_operand_a91f072d08b59eaa343e512e644c8efb4}{isOPImmediate}}()\{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_operand_afd469e305a467e2574f34ac9bd6c62b0}{get\_op\_type}}() == t\_OpType::Imm;\};}
+\DoxyCodeLine{64 protected :}
+\DoxyCodeLine{65     \textcolor{keywordtype}{string} \_oper;}
+\DoxyCodeLine{66 \};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif  }}
+
+\end{DoxyCode}

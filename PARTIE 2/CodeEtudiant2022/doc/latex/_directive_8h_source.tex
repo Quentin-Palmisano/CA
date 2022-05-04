@@ -1,0 +1,50 @@
+\hypertarget{_directive_8h_source}{}\doxysection{Directive.\+h}
+\label{_directive_8h_source}\index{include/Directive.h@{include/Directive.h}}
+\mbox{\hyperlink{_directive_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_Directive\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_Directive\_H}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <Enum\_type.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_line_8h}{Line.h}}>}}
+\DoxyCodeLine{12 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_directive}{Directive}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_line}{Line}}\{}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 public  :}
+\DoxyCodeLine{22     \textcolor{keywordtype}{string}  \_dir ;}
+\DoxyCodeLine{23     \textcolor{keywordtype}{string}  \_value ;}
+\DoxyCodeLine{24     \textcolor{keywordtype}{bool}    \_isfunction ;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{27     \mbox{\hyperlink{class_directive_a7487120f679e1b4d01843ad6feac7e07}{Directive}}(\textcolor{keywordtype}{string});}
+\DoxyCodeLine{28         }
+\DoxyCodeLine{31     \mbox{\hyperlink{class_directive_ac2f912e3997d9fed8bc289d77fc06305}{Directive}}(\textcolor{keywordtype}{string},\textcolor{keywordtype}{string});}
+\DoxyCodeLine{33     \mbox{\hyperlink{class_directive_adbe3bd8e72354bde2b7d809348d0d527}{Directive}}(\textcolor{keywordtype}{string},\textcolor{keywordtype}{string},\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{37     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_directive_aa9a48f09b0472c835ffa366bcff74f51}{\string~Directive}}();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39      }
+\DoxyCodeLine{42     \textcolor{keyword}{virtual} t\_Line \mbox{\hyperlink{class_directive_a0d574b0ffc25eb1fbc49032534e7ff44}{type\_line}}();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{46     \textcolor{keyword}{virtual} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_directive_a2fd56d5580ad7a993782649d7867732f}{to\_string}}();}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{50     \textcolor{keyword}{virtual} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_directive_aaeb0e95f88f41425718859daeb2116ad}{get\_content}}();}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{54     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_directive_a59b72d2ebc140e3ac0a0d6d789bb5bba}{set\_content}}(\textcolor{keywordtype}{string});}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{58     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_directive_ae585a212960cc755c057f85533ddc71e}{is\_function}}();}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{62     \textcolor{keyword}{virtual} t\_Inst  \mbox{\hyperlink{class_directive_a5c3ac59a9d3bc3c16341124482370843}{get\_type}}();}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{71 \mbox{\hyperlink{class_directive}{Directive}}* \mbox{\hyperlink{_directive_8h_a3f41086cfaa014d1777230616b15bb3a}{getDirective}}(\mbox{\hyperlink{class_line}{Line}} *l);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

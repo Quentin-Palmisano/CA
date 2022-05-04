@@ -1,0 +1,70 @@
+\hypertarget{_dfg_8h_source}{}\doxysection{Dfg.\+h}
+\label{_dfg_8h_source}\index{include/Dfg.h@{include/Dfg.h}}
+\mbox{\hyperlink{_dfg_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_Dfg\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_Dfg\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_node__dfg_8h}{Node\_dfg.h}}>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_instruction_8h}{Instruction.h}}>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <Enum\_type.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{class_basic__block}{Basic\_block}};}
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{class_node__dfg}{Node\_dfg}};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{class_dfg}{Dfg}}\{}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{31     \mbox{\hyperlink{class_dfg_aea8238bc912efa232319120cb1021fc1}{Dfg}}(\mbox{\hyperlink{class_basic__block}{Basic\_block}} *);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{35     \mbox{\hyperlink{class_dfg_a1422059d38caedf1ed3897a6f89109d8}{\string~Dfg}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dfg_a32426a0b87ae751c5a43a00629bde5e5}{build\_dfg}}(\mbox{\hyperlink{class_node__dfg}{Node\_dfg}}*,\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dfg_a19e39ead57755ba83008c3938c2b4c5d}{display}}(\mbox{\hyperlink{class_node__dfg}{Node\_dfg}} * ,\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{53     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dfg_a2598772fa5761e77dcb975048775602b}{restitute}}(\mbox{\hyperlink{class_node__dfg}{Node\_dfg}} * ,\textcolor{keywordtype}{string} \textcolor{keyword}{const}, \textcolor{keywordtype}{bool} );}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{57     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_dfg_a1a6dc2d38709c345177eec0d37ec43e2}{read\_test}}();}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dfg_af905d14cd03a3a9de54e1de5e7b1b853}{compute\_critical\_path}}();}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 }
+\DoxyCodeLine{67     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dfg_ae2a0906df6dcb5831ec2201a071debe2}{compute\_nb\_descendant}}();}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{71     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dfg_a958e7f272272f47d4dfb1c106c0ae496}{scheduling}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{76     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dfg_a7e60854edb700328933377fff6025232}{apply\_scheduling}}();}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{80     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_dfg_a568f4d0d48fc38f8fcdc4944b8d48740}{get\_critical\_path}}();}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{85     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_dfg_ad64fa53f2c4bf0b62b372a4fe4a4df98}{display\_sheduled\_instr}}();}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 }
+\DoxyCodeLine{90     \mbox{\hyperlink{class_node__dfg}{Node\_dfg}} * \mbox{\hyperlink{class_dfg_aaf99d150eb63a680d4ef9764f41568a2}{get\_inst\_for\_delayed\_slot}}();}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{keywordtype}{bool} is\_ready2(\mbox{\hyperlink{class_node__dfg}{Node\_dfg}}* node, list<Node\_dfg*>* scheduled, \mbox{\hyperlink{class_node__dfg}{Node\_dfg}}* delayed\_inst);}
+\DoxyCodeLine{93 \textcolor{keyword}{private}:}
+\DoxyCodeLine{94     \mbox{\hyperlink{class_basic__block}{Basic\_block}} *\_bb;}
+\DoxyCodeLine{95     list <Node\_dfg*> list\_node\_dfg;}
+\DoxyCodeLine{96     list <Node\_dfg*> \_roots;}
+\DoxyCodeLine{97     list <Node\_dfg*> \_delayed\_slot;}
+\DoxyCodeLine{98     \mbox{\hyperlink{class_node__dfg}{Node\_dfg}}* \_branch;}
+\DoxyCodeLine{99     }
+\DoxyCodeLine{100     list <Node\_dfg*> \_inst\_ready;}
+\DoxyCodeLine{101     list <Node\_dfg*> new\_order;}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{keywordtype}{int} \_nb\_arc;}
+\DoxyCodeLine{104     \textcolor{keywordtype}{int} \_length;}
+\DoxyCodeLine{105     \textcolor{keywordtype}{int} *\_read; }
+\DoxyCodeLine{106     }
+\DoxyCodeLine{107 \};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{110 }
+
+\end{DoxyCode}

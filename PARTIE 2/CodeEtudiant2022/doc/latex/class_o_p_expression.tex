@@ -1,0 +1,111 @@
+\hypertarget{class_o_p_expression}{}\doxysection{OPExpression Class Reference}
+\label{class_o_p_expression}\index{OPExpression@{OPExpression}}
+
+
+class representing an expression herited by \mbox{\hyperlink{class_operand}{Operand}}  
+
+
+
+
+{\ttfamily \#include $<$OPExpression.\+h$>$}
+
+Inheritance diagram for OPExpression\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_o_p_expression}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_o_p_expression_a5784034daef8568869fe0bb5ecfbcdcf}\label{class_o_p_expression_a5784034daef8568869fe0bb5ecfbcdcf}} 
+{\bfseries OPExpression} (string)
+\begin{DoxyCompactList}\small\item\em Constructor of the Expression class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_o_p_expression_a5ea892d89208ccb593510ee63ef42a19}\label{class_o_p_expression_a5ea892d89208ccb593510ee63ef42a19}} 
+virtual {\bfseries $\sim$\+OPExpression} ()
+\begin{DoxyCompactList}\small\item\em Destructor of the Expression class. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{class_o_p_expression_acf86deca614626b803bc3c29facbefef}{get\+\_\+op}} ()
+\begin{DoxyCompactList}\small\item\em Get the operand value. \end{DoxyCompactList}\item 
+virtual t\+\_\+\+Op\+Type \mbox{\hyperlink{class_o_p_expression_a06f8902130516437d5d93c43a5efcbd2}{get\+\_\+op\+\_\+type}} ()
+\begin{DoxyCompactList}\small\item\em get the operator type \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{class_o_p_expression_a0a6ee03eb083791028eeae021f4ff47b}{to\+\_\+string}} ()
+\begin{DoxyCompactList}\small\item\em tostring \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_o_p_expression_a3cfeacf4f76611d374be3caa9de80a05}{set\+\_\+op}} (string)
+\begin{DoxyCompactList}\small\item\em set the operand value setter of the operand \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+class representing an expression herited by \mbox{\hyperlink{class_operand}{Operand}} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_o_p_expression_acf86deca614626b803bc3c29facbefef}\label{class_o_p_expression_acf86deca614626b803bc3c29facbefef}} 
+\index{OPExpression@{OPExpression}!get\_op@{get\_op}}
+\index{get\_op@{get\_op}!OPExpression@{OPExpression}}
+\doxysubsubsection{\texorpdfstring{get\_op()}{get\_op()}}
+{\footnotesize\ttfamily virtual string OPExpression\+::get\+\_\+op (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the operand value. 
+
+\begin{DoxyReturn}{Returns}
+return the string of the Expression 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_operand_a2bf3ad8b34d39cb35ff743ffcc0f4675}{Operand}}.
+
+\mbox{\Hypertarget{class_o_p_expression_a06f8902130516437d5d93c43a5efcbd2}\label{class_o_p_expression_a06f8902130516437d5d93c43a5efcbd2}} 
+\index{OPExpression@{OPExpression}!get\_op\_type@{get\_op\_type}}
+\index{get\_op\_type@{get\_op\_type}!OPExpression@{OPExpression}}
+\doxysubsubsection{\texorpdfstring{get\_op\_type()}{get\_op\_type()}}
+{\footnotesize\ttfamily virtual t\+\_\+\+Op\+Type OPExpression\+::get\+\_\+op\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+get the operator type 
+
+\begin{DoxyReturn}{Returns}
+return the \mbox{\hyperlink{class_operand}{Operand}} type as enum 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_operand_afd469e305a467e2574f34ac9bd6c62b0}{Operand}}.
+
+\mbox{\Hypertarget{class_o_p_expression_a3cfeacf4f76611d374be3caa9de80a05}\label{class_o_p_expression_a3cfeacf4f76611d374be3caa9de80a05}} 
+\index{OPExpression@{OPExpression}!set\_op@{set\_op}}
+\index{set\_op@{set\_op}!OPExpression@{OPExpression}}
+\doxysubsubsection{\texorpdfstring{set\_op()}{set\_op()}}
+{\footnotesize\ttfamily virtual void OPExpression\+::set\+\_\+op (\begin{DoxyParamCaption}\item[{string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+set the operand value setter of the operand 
+
+
+
+Implements \mbox{\hyperlink{class_operand_a0895c39d7b97ea56f074d242e8232c78}{Operand}}.
+
+\mbox{\Hypertarget{class_o_p_expression_a0a6ee03eb083791028eeae021f4ff47b}\label{class_o_p_expression_a0a6ee03eb083791028eeae021f4ff47b}} 
+\index{OPExpression@{OPExpression}!to\_string@{to\_string}}
+\index{to\_string@{to\_string}!OPExpression@{OPExpression}}
+\doxysubsubsection{\texorpdfstring{to\_string()}{to\_string()}}
+{\footnotesize\ttfamily virtual string OPExpression\+::to\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+tostring 
+
+\begin{DoxyReturn}{Returns}
+return the Object as string 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_operand_a28aed96d5fafee66be81c30c1435ad00}{Operand}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_o_p_expression_8h}{OPExpression.\+h}}\end{DoxyCompactItemize}

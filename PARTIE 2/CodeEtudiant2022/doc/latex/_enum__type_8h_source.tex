@@ -1,0 +1,215 @@
+\hypertarget{_enum__type_8h_source}{}\doxysection{Enum\+\_\+type.\+h}
+\label{_enum__type_8h_source}\index{include/Enum\_type.h@{include/Enum\_type.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_Enum\_type\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_Enum\_type\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <map>} }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define NB\_REG 32}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define NB\_MAX\_BB 32}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{11     \textcolor{keyword}{enum class} t\_OpType \{Imm,Exp,\mbox{\hyperlink{class_label}{Label}},Reg\};}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{15     \textcolor{keyword}{enum  class} t\_Format \{J, I, R, O, B\};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{19     \textcolor{keyword}{enum class} t\_Inst \{ALU, MEM, BR, OTHER, BAD\};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{23     \textcolor{comment}{// !!WARNING!! :If you add new Operators, dont forget to report their caracteristics in op\_profile with the same order !!}}
+\DoxyCodeLine{24     \textcolor{keyword}{enum class} t\_Operator\{}
+\DoxyCodeLine{25     b,  beqz,   bnez,   beq,    bgez,   bgezal,}
+\DoxyCodeLine{26     bgtz,   blez,   bltz,   bltzal, bne,    j,}
+\DoxyCodeLine{27     jal,    jalr,   jr, la, li, loadi,  }
+\DoxyCodeLine{28     sb, sh, lb, lbu,    lh, lhu,    }
+\DoxyCodeLine{29     lui,    lw, lwl,    lwr,    ll, pref,}
+\DoxyCodeLine{30     sw, add,}
+\DoxyCodeLine{31     addu,   addi,   addiu,  and\_,   andi,   mul,}
+\DoxyCodeLine{32     mult,   multu,  nor,    or\_,    ori,    srl,}
+\DoxyCodeLine{33     srlv,   sub,    subu,   sll,    sllv,   slt,}
+\DoxyCodeLine{34     slti,   sltiu,  sltu,   xor\_,   xori,   sra,}
+\DoxyCodeLine{35     srav,   div\_,   divu,   mfhi,   mflo,   mthi,}
+\DoxyCodeLine{36     mtlo,   move,   neg,    negu,   nop,    break\_,}
+\DoxyCodeLine{37     syscallu, mfc0, mtc0,   clo,    clz,    ebase,}
+\DoxyCodeLine{38     eepc,   eret,   madd,   maddu,  mfc2,}
+\DoxyCodeLine{39     movn,   movz,   msub,   msubu,  mtc2,   }
+\DoxyCodeLine{40     sc,     sync\_,  tccontext,teq,  teqi,   tge,}
+\DoxyCodeLine{41     tgei,   tgeiu,  tgeu,   tlt,     tlti,  tltiu,}
+\DoxyCodeLine{42     tltu,   tne,    tnei,   waitn,  rfe,    maxop\};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{46 \textcolor{keyword}{enum class} t\_Dep \{NONE, RAW, WAR, WAW, MEMDEP, CONTROL\};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{49     \textcolor{keyword}{struct }\mbox{\hyperlink{structs___profile}{s\_Profile}} \{}
+\DoxyCodeLine{50        t\_Operator   op ;}
+\DoxyCodeLine{51        std::string  nom;}
+\DoxyCodeLine{52        t\_Format format ;}
+\DoxyCodeLine{53        t\_Inst   type ;}
+\DoxyCodeLine{54        \textcolor{keywordtype}{int}          nb\_oper;}
+\DoxyCodeLine{55     \} ;}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{keyword}{static} std::map<t\_Operator,s\_Profile> op\_profile = \{}
+\DoxyCodeLine{58   \{t\_Operator::b,         \{t\_Operator::b,         \textcolor{stringliteral}{"{}b"{}},              t\_Format::B,            t\_Inst::BAD\}\},}
+\DoxyCodeLine{59   \{t\_Operator::beqz,      \{t\_Operator::beqz,       \textcolor{stringliteral}{"{}beqz"{}},      t\_Format::I,        t\_Inst::BR\}\},}
+\DoxyCodeLine{60   \{t\_Operator::bnez,      \{t\_Operator::bnez,       \textcolor{stringliteral}{"{}bnez"{}},      t\_Format::I,        t\_Inst::BR\}\},}
+\DoxyCodeLine{61   \{t\_Operator::beq,   \{t\_Operator::beq,        \textcolor{stringliteral}{"{}beq"{}},       t\_Format::I,        t\_Inst::BR\}\},}
+\DoxyCodeLine{62   \{t\_Operator::bgez,      \{t\_Operator::bgez,       \textcolor{stringliteral}{"{}bgez"{}},      t\_Format::I,        t\_Inst::BR\}\},}
+\DoxyCodeLine{63   \{t\_Operator::bgezal,    \{t\_Operator::bgezal,     \textcolor{stringliteral}{"{}bgezal"{}},        t\_Format::I,        t\_Inst::BR\}\},}
+\DoxyCodeLine{64   \{t\_Operator::bgtz,      \{t\_Operator::bgtz,       \textcolor{stringliteral}{"{}bgtz"{}},      t\_Format::I,        t\_Inst::BR\}\},}
+\DoxyCodeLine{65   \{t\_Operator::blez,      \{t\_Operator::blez,       \textcolor{stringliteral}{"{}blez"{}},      t\_Format::I,        t\_Inst::BR\}\},}
+\DoxyCodeLine{66   \{t\_Operator::bltz,      \{t\_Operator::bltz,       \textcolor{stringliteral}{"{}bltz"{}},      t\_Format::I,        t\_Inst::BR\}\},}
+\DoxyCodeLine{67   \{t\_Operator::bltzal,    \{t\_Operator::bltzal,     \textcolor{stringliteral}{"{}bltzal"{}},            t\_Format::I,        t\_Inst::BR\}\},}
+\DoxyCodeLine{68   \{t\_Operator::bne,   \{t\_Operator::bne,        \textcolor{stringliteral}{"{}bne"{}},       t\_Format::I,        t\_Inst::BR\}\},}
+\DoxyCodeLine{69   \{t\_Operator::j,     \{t\_Operator::j,         \textcolor{stringliteral}{"{}j"{}},              t\_Format::J,        t\_Inst::BR\}\},}
+\DoxyCodeLine{70   \{t\_Operator::jal,   \{t\_Operator::jal,        \textcolor{stringliteral}{"{}jal"{}},       t\_Format::J,        t\_Inst::BR\}\},}
+\DoxyCodeLine{71   \{t\_Operator::jalr,      \{t\_Operator::jalr,        \textcolor{stringliteral}{"{}jalr"{}},     t\_Format::R,        t\_Inst::BR\}\},}
+\DoxyCodeLine{72   \{t\_Operator::jr,    \{t\_Operator::jr,          \textcolor{stringliteral}{"{}jr"{}},       t\_Format::R,        t\_Inst::BR\}\},}
+\DoxyCodeLine{73   \{t\_Operator::la,    \{t\_Operator::la,          \textcolor{stringliteral}{"{}la"{}},       t\_Format::O,        t\_Inst::OTHER\}\},}
+\DoxyCodeLine{74   \{t\_Operator::li,    \{t\_Operator::li,          \textcolor{stringliteral}{"{}li"{}},       t\_Format::O,        t\_Inst::OTHER\}\},}
+\DoxyCodeLine{75   \{t\_Operator::loadi,     \{t\_Operator::loadi,       \textcolor{stringliteral}{"{}loadi"{}},        t\_Format::O,        t\_Inst::OTHER\}\},}
+\DoxyCodeLine{76   \{t\_Operator::sb,    \{t\_Operator::sb,          \textcolor{stringliteral}{"{}sb"{}},       t\_Format::I,        t\_Inst::MEM\}\},}
+\DoxyCodeLine{77   \{t\_Operator::sh,    \{t\_Operator::sh,          \textcolor{stringliteral}{"{}sh"{}},       t\_Format::I,        t\_Inst::MEM\}\},}
+\DoxyCodeLine{78   \{t\_Operator::lb,    \{t\_Operator::lb,          \textcolor{stringliteral}{"{}lb"{}},       t\_Format::I,        t\_Inst::MEM\}\},}
+\DoxyCodeLine{79   \{t\_Operator::lbu,       \{t\_Operator::lbu,            \textcolor{stringliteral}{"{}lbu"{}},       t\_Format::I,        t\_Inst::MEM\}\},}
+\DoxyCodeLine{80   \{t\_Operator::lh,    \{t\_Operator::lh,          \textcolor{stringliteral}{"{}lh"{}},           t\_Format::I,        t\_Inst::MEM\}\},}
+\DoxyCodeLine{81   \{t\_Operator::lhu,       \{t\_Operator::lhu,            \textcolor{stringliteral}{"{}lhu"{}},       t\_Format::I,        t\_Inst::MEM\}\},}
+\DoxyCodeLine{82   \{t\_Operator::lui,   \{t\_Operator::lui,            \textcolor{stringliteral}{"{}lui"{}},       t\_Format::I,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{83   \{t\_Operator::lw,    \{t\_Operator::lw,          \textcolor{stringliteral}{"{}lw"{}},       t\_Format::I,        t\_Inst::MEM\}\},}
+\DoxyCodeLine{84   \{t\_Operator::lwl,   \{t\_Operator::lwl,            \textcolor{stringliteral}{"{}lwl"{}},       t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{85   \{t\_Operator::lwr,       \{t\_Operator::lwr,            \textcolor{stringliteral}{"{}lwr"{}},       t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{86   \{t\_Operator::ll,    \{t\_Operator::ll,          \textcolor{stringliteral}{"{}ll"{}},       t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{87   \{t\_Operator::pref,      \{t\_Operator::pref,          \textcolor{stringliteral}{"{}pref"{}},       t\_Format::O,        t\_Inst::MEM\}\},}
+\DoxyCodeLine{88   \{t\_Operator::sw,    \{t\_Operator::sw,          \textcolor{stringliteral}{"{}sw"{}},       t\_Format::I,        t\_Inst::MEM\}\},}
+\DoxyCodeLine{89   \{t\_Operator::add,       \{t\_Operator::add,            \textcolor{stringliteral}{"{}add"{}},       t\_Format::R,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{90   \{t\_Operator::addu,      \{t\_Operator::addu,          \textcolor{stringliteral}{"{}addu"{}},       t\_Format::R,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{91   \{t\_Operator::addi,      \{t\_Operator::addi,          \textcolor{stringliteral}{"{}addi"{}},       t\_Format::I,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{92   \{t\_Operator::addiu,     \{t\_Operator::addiu,        \textcolor{stringliteral}{"{}addiu"{}},           t\_Format::I,            t\_Inst::ALU\}\},}
+\DoxyCodeLine{93   \{t\_Operator::and\_,      \{t\_Operator::and\_,           \textcolor{stringliteral}{"{}and"{}},       t\_Format::R,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{94   \{t\_Operator::andi,      \{t\_Operator::andi,          \textcolor{stringliteral}{"{}andi"{}},       t\_Format::I,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{95   \{t\_Operator::mul,       \{t\_Operator::mul,            \textcolor{stringliteral}{"{}mul"{}},       t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{96   \{t\_Operator::mult,      \{t\_Operator::mult,       \textcolor{stringliteral}{"{}mult"{}},      t\_Format::R,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{97   \{t\_Operator::multu,     \{t\_Operator::multu,      \textcolor{stringliteral}{"{}multu"{}},         t\_Format::R,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{98   \{t\_Operator::nor,       \{t\_Operator::nor,        \textcolor{stringliteral}{"{}nor"{}},       t\_Format::R,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{99   \{t\_Operator::or\_,       \{t\_Operator::or\_,        \textcolor{stringliteral}{"{}or"{}},        t\_Format::R,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{100   \{t\_Operator::ori,       \{t\_Operator::ori,        \textcolor{stringliteral}{"{}ori"{}},       t\_Format::I,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{101   \{t\_Operator::srl,       \{t\_Operator::srl,        \textcolor{stringliteral}{"{}srl"{}},       t\_Format::R,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{102   \{t\_Operator::srlv,      \{t\_Operator::srlv,       \textcolor{stringliteral}{"{}srlv"{}},      t\_Format::R,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{103   \{t\_Operator::sub,       \{t\_Operator::sub,        \textcolor{stringliteral}{"{}sub"{}},       t\_Format::R,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{104   \{t\_Operator::subu,      \{t\_Operator::subu,       \textcolor{stringliteral}{"{}subu"{}},      t\_Format::R,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{105   \{t\_Operator::sll,       \{t\_Operator::sll,        \textcolor{stringliteral}{"{}sll"{}},       t\_Format::R,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{106   \{t\_Operator::sllv,      \{t\_Operator::sllv,       \textcolor{stringliteral}{"{}sllv"{}},      t\_Format::R,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{107   \{t\_Operator::slt,       \{t\_Operator::slt,        \textcolor{stringliteral}{"{}slt"{}},       t\_Format::R,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{108   \{t\_Operator::slti,      \{t\_Operator::slti,       \textcolor{stringliteral}{"{}slti"{}},      t\_Format::I,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{109   \{t\_Operator::sltiu,     \{t\_Operator::sltiu,      \textcolor{stringliteral}{"{}sltiu"{}},         t\_Format::I,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{110   \{t\_Operator::sltu,      \{t\_Operator::sltu,       \textcolor{stringliteral}{"{}sltu"{}},      t\_Format::R,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{111   \{t\_Operator::xor\_,      \{t\_Operator::xor\_,       \textcolor{stringliteral}{"{}xor"{}},       t\_Format::R,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{112   \{t\_Operator::xori,      \{t\_Operator::xori,       \textcolor{stringliteral}{"{}xori"{}},      t\_Format::I,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{113   \{t\_Operator::sra,   \{t\_Operator::sra,        \textcolor{stringliteral}{"{}sra"{}},       t\_Format::R,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{114   \{t\_Operator::srav,      \{t\_Operator::srav,       \textcolor{stringliteral}{"{}srav"{}},      t\_Format::R,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{115   \{t\_Operator::div\_,      \{t\_Operator::div\_,       \textcolor{stringliteral}{"{}div"{}},       t\_Format::R,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{116   \{t\_Operator::divu,      \{t\_Operator::divu,       \textcolor{stringliteral}{"{}divu"{}},      t\_Format::R,        t\_Inst::ALU\}\},}
+\DoxyCodeLine{117   \{t\_Operator::mfhi,      \{t\_Operator::mfhi,       \textcolor{stringliteral}{"{}mhfi"{}},      t\_Format::R,        t\_Inst::OTHER\}\},}
+\DoxyCodeLine{118   \{t\_Operator::mflo,      \{t\_Operator::mflo,       \textcolor{stringliteral}{"{}mflo"{}},      t\_Format::R,        t\_Inst::OTHER\}\},}
+\DoxyCodeLine{119   \{t\_Operator::mthi,      \{t\_Operator::mthi,       \textcolor{stringliteral}{"{}mthi"{}},      t\_Format::R,        t\_Inst::OTHER\}\},}
+\DoxyCodeLine{120   \{t\_Operator::mtlo,      \{t\_Operator::mtlo,       \textcolor{stringliteral}{"{}mtlo"{}},      t\_Format::R,        t\_Inst::OTHER\}\},}
+\DoxyCodeLine{121   \{t\_Operator::move,      \{t\_Operator::move,       \textcolor{stringliteral}{"{}move"{}},      t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{122   \{t\_Operator::neg,       \{t\_Operator::neg,        \textcolor{stringliteral}{"{}neg"{}},       t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{123   \{t\_Operator::negu,      \{t\_Operator::negu,       \textcolor{stringliteral}{"{}negu"{}},      t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{124   \{t\_Operator::nop,       \{t\_Operator::nop,        \textcolor{stringliteral}{"{}nop"{}},       t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{125   \{t\_Operator::break\_,    \{t\_Operator::break\_,     \textcolor{stringliteral}{"{}break"{}},         t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{126   \{t\_Operator::syscallu,  \{t\_Operator::syscallu,   \textcolor{stringliteral}{"{}syscall"{}},       t\_Format::R,        t\_Inst::BR\}\},}
+\DoxyCodeLine{127   \{t\_Operator::mfc0,      \{t\_Operator::mfc0,       \textcolor{stringliteral}{"{}mfc0"{}},      t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{128   \{t\_Operator::mtc0,      \{t\_Operator::mtc0,       \textcolor{stringliteral}{"{}mtc0"{}},      t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{129   \{t\_Operator::clo,   \{t\_Operator::clo,        \textcolor{stringliteral}{"{}clo"{}},       t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{130   \{t\_Operator::clz,       \{t\_Operator::clz,        \textcolor{stringliteral}{"{}clz"{}},       t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{131   \{t\_Operator::ebase,     \{t\_Operator::ebase,      \textcolor{stringliteral}{"{}ebase"{}},         t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{132   \{t\_Operator::eepc,      \{t\_Operator::eepc,       \textcolor{stringliteral}{"{}eepc"{}},      t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{133   \{t\_Operator::eret,      \{t\_Operator::eret,       \textcolor{stringliteral}{"{}eret"{}},      t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{134   \{t\_Operator::madd,      \{t\_Operator::madd,       \textcolor{stringliteral}{"{}madd"{}},      t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{135   \{t\_Operator::maddu,     \{t\_Operator::maddu,      \textcolor{stringliteral}{"{}maddu"{}},         t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{136   \{t\_Operator::mfc2,      \{t\_Operator::mfc2,       \textcolor{stringliteral}{"{}mfc2"{}},      t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{137   \{t\_Operator::movn,      \{t\_Operator::movn,       \textcolor{stringliteral}{"{}movn"{}},      t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{138   \{t\_Operator::movz,      \{t\_Operator::movz,       \textcolor{stringliteral}{"{}movz"{}},      t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{139   \{t\_Operator::msub,      \{t\_Operator::msub,       \textcolor{stringliteral}{"{}msub"{}},      t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{140   \{t\_Operator::msubu,     \{t\_Operator::msubu,      \textcolor{stringliteral}{"{}msubu"{}},             t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{141   \{t\_Operator::mtc2,      \{t\_Operator::mtc2,       \textcolor{stringliteral}{"{}mtc2"{}},      t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{142   \{t\_Operator::sc,    \{t\_Operator::sc,     \textcolor{stringliteral}{"{}sc"{}},            t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{143   \{t\_Operator::sync\_,     \{t\_Operator::sync\_,      \textcolor{stringliteral}{"{}sync"{}},      t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{144   \{t\_Operator::tccontext,     \{t\_Operator::tccontext,  \textcolor{stringliteral}{"{}tccontext"{}},         t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{145   \{t\_Operator::teq,       \{t\_Operator::teq,        \textcolor{stringliteral}{"{}teq"{}},       t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{146   \{t\_Operator::teqi,      \{t\_Operator::teqi,       \textcolor{stringliteral}{"{}teqi"{}},      t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{147   \{t\_Operator::tge,   \{t\_Operator::tge,        \textcolor{stringliteral}{"{}tge"{}},       t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{148   \{t\_Operator::tgei,      \{t\_Operator::tgei,       \textcolor{stringliteral}{"{}tgei"{}},      t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{149   \{t\_Operator::tgeiu,     \{t\_Operator::tgeiu,      \textcolor{stringliteral}{"{}tgeiu"{}},         t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{150   \{t\_Operator::tgeu,      \{t\_Operator::tgeu,       \textcolor{stringliteral}{"{}tgeu"{}},      t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{151   \{t\_Operator::tlt,       \{t\_Operator::tlt,        \textcolor{stringliteral}{"{}tlt"{}},       t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{152   \{t\_Operator::tlti,      \{t\_Operator::tlti,       \textcolor{stringliteral}{"{}tlti"{}},      t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{153   \{t\_Operator::tltiu,     \{t\_Operator::tltiu,      \textcolor{stringliteral}{"{}tltiu"{}},             t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{154   \{t\_Operator::tltu,      \{t\_Operator::tltu,       \textcolor{stringliteral}{"{}tltu"{}},      t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{155   \{t\_Operator::tne,   \{t\_Operator::tne,        \textcolor{stringliteral}{"{}tne"{}},       t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{156   \{t\_Operator::tnei,      \{t\_Operator::tnei,       \textcolor{stringliteral}{"{}tnei"{}},      t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{157   \{t\_Operator::waitn,     \{t\_Operator::waitn,      \textcolor{stringliteral}{"{}wait"{}},      t\_Format::B,        t\_Inst::BAD\}\},}
+\DoxyCodeLine{158   \{t\_Operator::rfe,       \{t\_Operator::rfe,        \textcolor{stringliteral}{"{}rfe"{}},       t\_Format::B,        t\_Inst::BAD\}\}}
+\DoxyCodeLine{159 \};}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 }
+\DoxyCodeLine{164     \textcolor{keyword}{enum class} t\_Line \{Instr,\mbox{\hyperlink{class_label}{Label}},\mbox{\hyperlink{class_directive}{Directive}}\};}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{168     \textcolor{keyword}{enum} t\_Src\_Dst \{Src,Dst,CopSrc,CopDst\} ;}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#define WAW\_DELAY 0}}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#define WAR\_DELAY 0}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#define MEMDEP\_DELAY 1}}
+\DoxyCodeLine{174  }
+\DoxyCodeLine{177 \textcolor{comment}{/*}}
+\DoxyCodeLine{178 \textcolor{comment}{Conso    ALU MEM BR OTHER BAD}}
+\DoxyCodeLine{179 \textcolor{comment}{Prod}}
+\DoxyCodeLine{180 \textcolor{comment}{ALU      1   1   2    1   -\/1}}
+\DoxyCodeLine{181 \textcolor{comment}{MEM      2   2   3    2   -\/1}}
+\DoxyCodeLine{182 \textcolor{comment}{BR       1   1   2    1   -\/1}}
+\DoxyCodeLine{183 \textcolor{comment}{OTHER   -\/1   -\/1  -\/1   1   -\/1}}
+\DoxyCodeLine{184 \textcolor{comment}{BAD     -\/1   -\/1  -\/1  -\/1   -\/1  }}
+\DoxyCodeLine{185 \textcolor{comment}{}}
+\DoxyCodeLine{186 \textcolor{comment}{*/} }
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 \textcolor{keyword}{static} std::map<t\_Inst, std::map<t\_Inst, int>> t\_delay =}
+\DoxyCodeLine{189   \{}
+\DoxyCodeLine{190     \{t\_Inst::ALU, \{ \{t\_Inst::ALU, 1\}, \{t\_Inst::MEM, 1\}, \{t\_Inst::BR, 2\}, \{t\_Inst::OTHER, -\/1\}, \{t\_Inst::BAD, -\/1\}\}\},}
+\DoxyCodeLine{191     \{t\_Inst::MEM, \{\{t\_Inst::ALU, 2\},\{t\_Inst::MEM, 2\}, \{t\_Inst::BR, 3\}, \{t\_Inst::OTHER, -\/1\},\{t\_Inst::BAD, -\/1\}\}\},}
+\DoxyCodeLine{192     \{t\_Inst::BR,   \{\{t\_Inst::ALU, 1 \},\{t\_Inst::MEM, 1\}, \{t\_Inst::BR, 2\}, \{t\_Inst::OTHER, -\/1\},\{t\_Inst::BAD, -\/1\}\}\},}
+\DoxyCodeLine{193     \{t\_Inst::OTHER, \{\{t\_Inst::ALU, -\/1\},\{t\_Inst::MEM, -\/1\}, \{t\_Inst::BR, -\/1\}, \{t\_Inst::OTHER, -\/1\},\{t\_Inst::BAD, -\/1\}\}\},}
+\DoxyCodeLine{194     \{t\_Inst::BAD, \{\{t\_Inst::ALU, -\/1\},\{t\_Inst::MEM, -\/1\}, \{t\_Inst::BR, -\/1\}, \{t\_Inst::OTHER, -\/1\},\{t\_Inst::BAD, -\/1\}\}\},}
+\DoxyCodeLine{195   \};}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198 \textcolor{comment}{// A TESTER AUSSI }}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 \textcolor{comment}{/*}}
+\DoxyCodeLine{201 \textcolor{comment}{Conso    ALU MEM BR OTHER BAD}}
+\DoxyCodeLine{202 \textcolor{comment}{Prod}}
+\DoxyCodeLine{203 \textcolor{comment}{ALU      2   2   3  -\/1   -\/1}}
+\DoxyCodeLine{204 \textcolor{comment}{MEM      3   3   4   -\/1   -\/1}}
+\DoxyCodeLine{205 \textcolor{comment}{BR       2   2   3   -\/1   -\/1}}
+\DoxyCodeLine{206 \textcolor{comment}{OTHER   -\/1   -\/1  -\/1  -\/1   -\/1}}
+\DoxyCodeLine{207 \textcolor{comment}{BAD     -\/1   -\/1  -\/1  -\/1   -\/1  }}
+\DoxyCodeLine{208 \textcolor{comment}{}}
+\DoxyCodeLine{209 \textcolor{comment}{*/} }
+\DoxyCodeLine{210 \textcolor{comment}{/*}}
+\DoxyCodeLine{211 \textcolor{comment}{ static std::map<t\_Inst, std::map<t\_Inst, int>> t\_delay =}}
+\DoxyCodeLine{212 \textcolor{comment}{  \{}}
+\DoxyCodeLine{213 \textcolor{comment}{    \{t\_Inst::ALU, \{ \{t\_Inst::ALU, 2\}, \{t\_Inst::MEM, 2\}, \{t\_Inst::BR, 3\}, \{t\_Inst::OTHER, -\/1\}, \{t\_Inst::BAD, -\/1\}\}\},}}
+\DoxyCodeLine{214 \textcolor{comment}{    \{t\_Inst::MEM, \{\{t\_Inst::ALU, 3\},\{t\_Inst::MEM, 3\}, \{t\_Inst::BR, 4\}, \{t\_Inst::OTHER, -\/1\},\{t\_Inst::BAD, -\/1\}\}\},}}
+\DoxyCodeLine{215 \textcolor{comment}{    \{t\_Inst::BR,   \{\{t\_Inst::ALU, 2\},\{t\_Inst::MEM, 2\}, \{t\_Inst::BR, 3\}, \{t\_Inst::OTHER, -\/1\},\{t\_Inst::BAD, -\/1\}\}\},}}
+\DoxyCodeLine{216 \textcolor{comment}{    \{t\_Inst::OTHER, \{\{t\_Inst::ALU, -\/1\},\{t\_Inst::MEM, -\/1\}, \{t\_Inst::BR, -\/1\}, \{t\_Inst::OTHER, -\/1\},\{t\_Inst::BAD, -\/1\}\}\},}}
+\DoxyCodeLine{217 \textcolor{comment}{    \{t\_Inst::BAD, \{\{t\_Inst::ALU, -\/1\},\{t\_Inst::MEM, -\/1\}, \{t\_Inst::BR, -\/1\}, \{t\_Inst::OTHER, -\/1\},\{t\_Inst::BAD, -\/1\}\}\},}}
+\DoxyCodeLine{218 \textcolor{comment}{  \};}}
+\DoxyCodeLine{219 \textcolor{comment}{}}
+\DoxyCodeLine{220 \textcolor{comment}{*/}}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224  }
+\DoxyCodeLine{225   }
+\DoxyCodeLine{226 }
+
+\end{DoxyCode}

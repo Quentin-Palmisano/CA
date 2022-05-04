@@ -1,0 +1,72 @@
+\hypertarget{_line_8h_source}{}\doxysection{Line.\+h}
+\label{_line_8h_source}\index{include/Line.h@{include/Line.h}}
+\mbox{\hyperlink{_line_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_Line\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_Line\_H}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <Enum\_type.h>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_line}{Line}}\{}
+\DoxyCodeLine{19 public  :}
+\DoxyCodeLine{20     }
+\DoxyCodeLine{23     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_line_a4a95bafcefa28672b3999deb011b9e50}{\string~Line}}()\{\}; }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{28     \textcolor{keyword}{virtual} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_line_aa7f74673c9c3a7423a513a5fb64bf825}{get\_content}}()=0;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{33     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_line_afa27867ffd08e6915d9e791d2ed0b448}{set\_content}}(\textcolor{keywordtype}{string})=0;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{38     \textcolor{keyword}{virtual} t\_Line \mbox{\hyperlink{class_line_a0cc2cdd9bc04649adebd1ff9b753bc85}{type\_line}}()=0;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{44     \textcolor{keyword}{virtual} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_line_a477523118f17d72f58f2912b391afc73}{to\_string}}()=0;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{49     \textcolor{keyword}{virtual} t\_Inst  \mbox{\hyperlink{class_line_a679ddcc8a7d6a634218f177b4d602bd5}{get\_type}}()=0;}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{53     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_line_a57e724949fa0828dfdd2a1bb0f7db8d0}{isInst}}()\{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_line_a0cc2cdd9bc04649adebd1ff9b753bc85}{type\_line}}()==t\_Line::Instr;\};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{57     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_line_a8323f3df960924826199bd607198ac7f}{isLabel}}()\{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_line_a0cc2cdd9bc04649adebd1ff9b753bc85}{type\_line}}()==t\_Line::Label;\};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{61     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_line_ad014e40a75c8a04e6a091ae4110579bc}{isDirective}}()\{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_line_a0cc2cdd9bc04649adebd1ff9b753bc85}{type\_line}}()==t\_Line::Directive;\};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 }
+\DoxyCodeLine{67     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_line_a66770cb09833f18ec4d5b494f5edae77}{set\_next}}(\mbox{\hyperlink{class_line}{Line}} *newsuccessor)\{}
+\DoxyCodeLine{68       \_next=newsuccessor;}
+\DoxyCodeLine{69     \};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{76     \mbox{\hyperlink{class_line}{Line}} * \mbox{\hyperlink{class_line_a4589bebee3bb71af8de4f5ef6fb6a48c}{get\_prev}}()\{}
+\DoxyCodeLine{77       \textcolor{keywordflow}{return} \_prev;}
+\DoxyCodeLine{78     \};}
+\DoxyCodeLine{79     }
+\DoxyCodeLine{82     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_line_abf7301d0514bf6dafdc9da9ad79a4341}{set\_prev}}(\mbox{\hyperlink{class_line}{Line}} *newprev)\{}
+\DoxyCodeLine{83       \_prev=newprev;}
+\DoxyCodeLine{84     \};}
+\DoxyCodeLine{85     }
+\DoxyCodeLine{89     \mbox{\hyperlink{class_line}{Line}}* \mbox{\hyperlink{class_line_a741ae3ecb9927a33cb8550a41eabe260}{get\_next}}()\{}
+\DoxyCodeLine{90       \textcolor{keywordflow}{return} \_next;}
+\DoxyCodeLine{91     \};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{96     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_line_a2f138ac1c387679c8569c4b5bf06a0f9}{display}}()\{}
+\DoxyCodeLine{97       cout << \mbox{\hyperlink{class_line_aa7f74673c9c3a7423a513a5fb64bf825}{get\_content}}() << endl;}
+\DoxyCodeLine{98       \textcolor{keywordflow}{return};}
+\DoxyCodeLine{99     \}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{103     \mbox{\hyperlink{class_line}{Line}} * \_next;}
+\DoxyCodeLine{104     \mbox{\hyperlink{class_line}{Line}} * \_prev;}
+\DoxyCodeLine{105     \textcolor{keywordtype}{string} \_line;\}}
+\DoxyCodeLine{106     ;}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#endif  }}
+\DoxyCodeLine{109 }
+
+\end{DoxyCode}

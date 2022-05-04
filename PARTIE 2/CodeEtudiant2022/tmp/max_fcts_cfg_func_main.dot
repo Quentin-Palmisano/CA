@@ -1,0 +1,4 @@
+digraph G1 {
+node [shape = box];
+BB0 [label = "BB0\nmain:\laddiu $29,$29,-24\lsw $31,20($29)\lsw $4,24($29)\lsw $5,28($29)\lori $5,$0,5\lori $4,$0,23\ljal max2\ladd $0,$0,$0\l"] ;
+BB0 -> EXIT  [style = filled, label = ""];

@@ -1,0 +1,56 @@
+\hypertarget{_o_p_register_8h_source}{}\doxysection{OPRegister.\+h}
+\label{_o_p_register_8h_source}\index{include/OPRegister.h@{include/OPRegister.h}}
+\mbox{\hyperlink{_o_p_register_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_OPRegister\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_OPRegister\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_operand_8h}{Operand.h}}>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <Enum\_type.h>}}
+\DoxyCodeLine{13 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_o_p_register}{OPRegister}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_operand}{Operand}}\{}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 private :}
+\DoxyCodeLine{22     \textcolor{keywordtype}{int} \_reg;}
+\DoxyCodeLine{23     t\_Src\_Dst \_type;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 public  :}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{29     \mbox{\hyperlink{class_o_p_register_a896eb65f36bf615ccfa74541de23858f}{OPRegister}}(\textcolor{keywordtype}{string}, t\_Src\_Dst);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{33     \mbox{\hyperlink{class_o_p_register_ad75c23d1db7c149c20cbc8bb01c6df59}{OPRegister}}(\textcolor{keywordtype}{string}, \textcolor{keywordtype}{int}, t\_Src\_Dst);}
+\DoxyCodeLine{34     }
+\DoxyCodeLine{35     \mbox{\hyperlink{class_o_p_register_a896eb65f36bf615ccfa74541de23858f}{OPRegister}}(\textcolor{keywordtype}{int}, t\_Src\_Dst);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{39     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_o_p_register_aedab3bc5a2eecd0d02771fb6b37d73fe}{\string~OPRegister}}();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{45     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_o_p_register_acd1c47e67de36adf6b1b88c0a4760b7e}{get\_reg\_num}}();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_o_p_register_a1465b14515c02816c15dd1e2b244a4f2}{set\_reg\_num}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{55     \textcolor{keyword}{virtual} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_o_p_register_a3f9f6cad40b83eee3f88a2e84a0ccffa}{get\_op}}();}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{60     \textcolor{keyword}{virtual} t\_OpType \mbox{\hyperlink{class_o_p_register_a1be03d6e6422510a1fd12d1f13dfd601}{get\_op\_type}}();}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{66     \textcolor{keyword}{virtual} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_o_p_register_a9f55bdff75224fb18973a9e913a4022f}{to\_string}}();}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{71     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_o_p_register_a3cceb6c804e4fe1187de7eb47c21a285}{set\_op}}( \textcolor{keywordtype}{string});}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{76     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_o_p_register_a23b5061c12e99d3bd320038e643eb247}{set\_type}}(t\_Src\_Dst );}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{81     t\_Src\_Dst \mbox{\hyperlink{class_o_p_register_a7748867306b20ca99c0955b376789777}{get\_type}}( );}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \};}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{87 \mbox{\hyperlink{class_o_p_register}{OPRegister}}* \mbox{\hyperlink{_o_p_register_8h_ac7cf075aa5b29638296e4aee547199ab}{getOPRegister}}(\mbox{\hyperlink{class_operand}{Operand}} *);}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{90 }
+
+\end{DoxyCode}

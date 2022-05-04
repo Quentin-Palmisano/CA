@@ -1,0 +1,4 @@
+digraph G1 {
+node [shape = box];
+BB0 [label = "BB0\nmax:\lsw $4,0($29)\lsw $5,4($29)\lsw $6,8($29)\llw $3,0($29)\llw $2,4($29)\lslt $2,$3,$2\lbeq $2,$0,$l5\ladd $0,$0,$0\l"] ;
+BB0 -> EXIT  [style = filled, label = ""];

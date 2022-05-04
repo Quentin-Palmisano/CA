@@ -1,0 +1,75 @@
+\hypertarget{_program_8h_source}{}\doxysection{Program.\+h}
+\label{_program_8h_source}\index{include/Program.h@{include/Program.h}}
+\mbox{\hyperlink{_program_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_Program\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_Program\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_line_8h}{Line.h}}>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_function_8h}{Function.h}}>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_basic__block_8h}{Basic\_block.h}}>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_instruction_8h}{Instruction.h}}>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_directive_8h}{Directive.h}}>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_cfg_8h}{Cfg.h}}>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <Enum\_type.h>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{21 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{class_program}{Program}}\{}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{34     \mbox{\hyperlink{class_program_aaefaa0df08f3484476fc4d61e97acbdc}{Program}}();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{38     \mbox{\hyperlink{class_program_a9918fe797bf830c47a652c81f449c35c}{Program}}(\mbox{\hyperlink{class_program}{Program}} \textcolor{keyword}{const}\&  otherprogram);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{42     \mbox{\hyperlink{class_program_aabe3dfc72075de14b189b22b0e33ff23}{Program}} (\textcolor{keywordtype}{string} \textcolor{keyword}{const} file);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{46     \mbox{\hyperlink{class_program_a986aef1c50e1d338a3315a47ba6df549}{\string~Program}}();}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_program_a90e1c506dffd5756133f70811f6117d9}{add\_line}}(\mbox{\hyperlink{class_line}{Line}} * newline);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{54     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_program_a7adb0709f1a9f3ed63e861cc7f02d308}{add\_line\_at}}(\mbox{\hyperlink{class_line}{Line}} *newline, \textcolor{keywordtype}{int} position);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_program_aabea8add836e10a384b63e2f293ece23}{exchange\_line}}(\textcolor{keywordtype}{int} line1, \textcolor{keywordtype}{int} line2);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_program_a3c1399ac5ed69e5c152f1a2cc1e644d4}{display}}();}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 }
+\DoxyCodeLine{67     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_program_a1adce5c1fc414a378e4b87f1d4b535e1}{del\_line}}(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{71     \mbox{\hyperlink{class_line}{Line}} * \mbox{\hyperlink{class_program_a2ba53df7ee0201610b6320d6cec7611a}{find\_line}}(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{75     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_program_a190f24ecadca14d748408c352aabc219}{size}}();}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{83     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_program_a3db3e17c96bb809c3e6f81b8bc22ee20}{in\_file}}(\textcolor{keywordtype}{string} \textcolor{keyword}{const} filename);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{87     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_program_aff32c461ae544453df5d55f475b3da22}{is\_empty}}();}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{91     \textcolor{keywordtype}{void}  \mbox{\hyperlink{class_program_a2df440fd87848fe3c5d258bc491df2de}{compute\_function}}();}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{95     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_program_aa85073d3bd6782af3759f4a2961ae80f}{nbr\_func}}();}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{99     \mbox{\hyperlink{class_function}{Function}}*  \mbox{\hyperlink{class_program_a0924bc8b6b29427f0a5b92f22d611977}{get\_function}}(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{100     }
+\DoxyCodeLine{101 }
+\DoxyCodeLine{104     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_program_a1cef65227311c68a2e81c89dcbc16914}{flush}}();}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{keyword}{private}:}
+\DoxyCodeLine{108     \textcolor{keywordtype}{int} \_length;}
+\DoxyCodeLine{109     \mbox{\hyperlink{class_line}{Line}} *\_head;}
+\DoxyCodeLine{110     \mbox{\hyperlink{class_line}{Line}} *\_end;}
+\DoxyCodeLine{111     list <Function *> \_myfunc;}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \};}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

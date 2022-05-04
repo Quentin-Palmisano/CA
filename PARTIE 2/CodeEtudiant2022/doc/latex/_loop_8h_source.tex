@@ -1,0 +1,66 @@
+\hypertarget{_loop_8h_source}{}\doxysection{Loop.\+h}
+\label{_loop_8h_source}\index{include/Loop.h@{include/Loop.h}}
+\mbox{\hyperlink{_loop_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_Loop\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_Loop\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_line_8h}{Line.h}}>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_basic__block_8h}{Basic\_block.h}}>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_instruction_8h}{Instruction.h}}>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_label_8h}{Label.h}}>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <Enum\_type.h>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_cfg_8h}{Cfg.h}}>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{class_loop}{Loop}}\{}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{public}:}
+\DoxyCodeLine{34   \mbox{\hyperlink{class_loop_a83219d7c9e1f76ca9ef5f35c611c351c}{Loop}}(\mbox{\hyperlink{class_basic__block}{Basic\_block}}*, \mbox{\hyperlink{class_basic__block}{Basic\_block}}*, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int});}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{38   \mbox{\hyperlink{class_loop_ac25ba52a46e689c85e2720718615d767}{\string~Loop}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{42   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_loop_a7c12f75026535ed0ed793d945cca5b26}{set\_header}}(\mbox{\hyperlink{class_basic__block}{Basic\_block}} *);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{46   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_loop_ab5523a4e9881844ed445c18c809752cb}{set\_latch}}(\mbox{\hyperlink{class_basic__block}{Basic\_block}} *);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{51   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_loop_a20a77f1b8351a30440af1fe3f1bd883c}{set\_id}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int});}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{55   \mbox{\hyperlink{class_basic__block}{Basic\_block}}* \mbox{\hyperlink{class_loop_a599b55fdd7701d521f4b14719c42fc93}{get\_header}}();}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{59   \mbox{\hyperlink{class_basic__block}{Basic\_block}}* \mbox{\hyperlink{class_loop_a6445b87a0a68f322bb4fae2b515493f9}{get\_latch}}();}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 }
+\DoxyCodeLine{65   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_loop_ac03aab252c698954cebe10c283685714}{get\_id}}();}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{69   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_loop_a9c19796af1e978d32f80efc48035b061}{display}}();}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 }
+\DoxyCodeLine{74   \textcolor{keywordtype}{int} \mbox{\hyperlink{class_loop_a333d1ba3bf5e448f7cd958c6d39beec2}{nbr\_BB}}();}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{79   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_loop_a5ec7079fa8bbce34a18b41b768d3a118}{compute\_in\_loop\_BB}}();}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{keyword}{private}:}
+\DoxyCodeLine{86     \mbox{\hyperlink{class_basic__block}{Basic\_block}} *header\_bb;}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{90     \mbox{\hyperlink{class_basic__block}{Basic\_block}} *latch\_bb;}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{94     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} loop\_id;}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{99     list <Basic\_block*> \_myBB;}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \};}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

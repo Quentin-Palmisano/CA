@@ -1,0 +1,170 @@
+\hypertarget{class_basic__block}{}\doxysection{Basic\+\_\+block Class Reference}
+\label{class_basic__block}\index{Basic\_block@{Basic\_block}}
+
+
+class representing a \mbox{\hyperlink{class_basic__block}{Basic\+\_\+block}} of a fonction  
+
+
+
+
+{\ttfamily \#include $<$Basic\+\_\+block.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_basic__block_a9c0db81ea09b9aa4e4cdb77cbaf90bdd}\label{class_basic__block_a9c0db81ea09b9aa4e4cdb77cbaf90bdd}} 
+string {\bfseries get\+\_\+content} ()
+\begin{DoxyCompactList}\small\item\em return a string with the basic block content \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_aad79779b098ba4ccd1549a8dbbd80d7d}\label{class_basic__block_aad79779b098ba4ccd1549a8dbbd80d7d}} 
+void {\bfseries display} ()
+\begin{DoxyCompactList}\small\item\em display the basic block \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a8cb196904537be8fb0474afce7c769c1}\label{class_basic__block_a8cb196904537be8fb0474afce7c769c1}} 
+int {\bfseries get\+\_\+index} ()
+\begin{DoxyCompactList}\small\item\em get the index of the basic block \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_abfdf95c7ebd3830eae0175da94b002b5}\label{class_basic__block_abfdf95c7ebd3830eae0175da94b002b5}} 
+\mbox{\hyperlink{class_line}{Line}} $\ast$ {\bfseries get\+\_\+branch} ()
+\begin{DoxyCompactList}\small\item\em get the line corresponding to the branch \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_acb9b80088751bcf4329b3d1532f724ac}\label{class_basic__block_acb9b80088751bcf4329b3d1532f724ac}} 
+void {\bfseries set\+\_\+link\+\_\+succ\+\_\+pred} (\mbox{\hyperlink{class_basic__block}{Basic\+\_\+block}} $\ast$)
+\begin{DoxyCompactList}\small\item\em set the parameter as a BB successor of this and this as a BB predecessor of the parameter \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a9ec82d32525f886034ab8021a79974b1}\label{class_basic__block_a9ec82d32525f886034ab8021a79974b1}} 
+void {\bfseries set\+\_\+successor} (\mbox{\hyperlink{class_basic__block}{Basic\+\_\+block}} $\ast$BB)
+\begin{DoxyCompactList}\small\item\em setter of the successor of the basic block \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a1d585445c8e72ee271bd26b9aa7fe2fb}\label{class_basic__block_a1d585445c8e72ee271bd26b9aa7fe2fb}} 
+\mbox{\hyperlink{class_basic__block}{Basic\+\_\+block}} $\ast$ {\bfseries get\+\_\+successor} (int index)
+\begin{DoxyCompactList}\small\item\em get the successor of the basic block by its index (0 or 1) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a9ca33ccefa6395a6b0b876af20a57eaa}\label{class_basic__block_a9ca33ccefa6395a6b0b876af20a57eaa}} 
+void {\bfseries set\+\_\+predecessor} (\mbox{\hyperlink{class_basic__block}{Basic\+\_\+block}} $\ast$BB)
+\begin{DoxyCompactList}\small\item\em setter of the predecessor of the basic block \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_affdf409f96c9a119864c53eaed017d18}\label{class_basic__block_affdf409f96c9a119864c53eaed017d18}} 
+\mbox{\hyperlink{class_basic__block}{Basic\+\_\+block}} $\ast$ {\bfseries get\+\_\+predecessor} (int)
+\begin{DoxyCompactList}\small\item\em get the ith predecessor of the basic block \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a3ccc47a22b9d5d9e932862ab37783225}\label{class_basic__block_a3ccc47a22b9d5d9e932862ab37783225}} 
+int {\bfseries get\+\_\+nb\+\_\+succ} ()
+\begin{DoxyCompactList}\small\item\em returns/gets the number of successors of the basic block \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_ade6f71459e5b54108022a16a4a6a00cb}\label{class_basic__block_ade6f71459e5b54108022a16a4a6a00cb}} 
+int {\bfseries get\+\_\+nb\+\_\+pred} ()
+\begin{DoxyCompactList}\small\item\em returns/gets the number of predecessors of the basic block \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_ad3d770c77ba92d455fa3430df5f16eff}\label{class_basic__block_ad3d770c77ba92d455fa3430df5f16eff}} 
+int {\bfseries get\+\_\+nb\+\_\+inst} ()
+\begin{DoxyCompactList}\small\item\em returns the number of instructions \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_ae53d18eb1436d162ee9ae565c46b35e5}\label{class_basic__block_ae53d18eb1436d162ee9ae565c46b35e5}} 
+void {\bfseries link\+\_\+instructions} ()
+\begin{DoxyCompactList}\small\item\em link instructions in the order they appear in the code and set them an index, to be performed to iterate on the instructions \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_aafb3fa0083e9176eb04c3a9f93d117e2}\label{class_basic__block_aafb3fa0083e9176eb04c3a9f93d117e2}} 
+\mbox{\hyperlink{class_instruction}{Instruction}} $\ast$ {\bfseries get\+\_\+first\+\_\+instruction} ()
+\begin{DoxyCompactList}\small\item\em return the first instruction of the basic block, nullptr if any \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_ae0e60cf3d3ceda5870cffd91ccc8698b}\label{class_basic__block_ae0e60cf3d3ceda5870cffd91ccc8698b}} 
+\mbox{\hyperlink{class_instruction}{Instruction}} $\ast$ {\bfseries get\+\_\+last\+\_\+instruction} ()
+\begin{DoxyCompactList}\small\item\em return the last instruction of the basic block, nullptr if any \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a6b03285ef8866859ee06220c92413f8c}\label{class_basic__block_a6b03285ef8866859ee06220c92413f8c}} 
+\mbox{\hyperlink{class_instruction}{Instruction}} $\ast$ {\bfseries get\+\_\+instruction\+\_\+at\+\_\+index} (int)
+\begin{DoxyCompactList}\small\item\em returns the instruction at the given index, nullptr if any \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_ad9a1b85a76c23cfd308971395ddbc502}\label{class_basic__block_ad9a1b85a76c23cfd308971395ddbc502}} 
+void {\bfseries compute\+\_\+pred\+\_\+succ\+\_\+dep} ()
+\begin{DoxyCompactList}\small\item\em comput dependances predecessors and successors of each instructions in the BB \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a4ef46cdfb1fa30e3edfc0407b008fa08}\label{class_basic__block_a4ef46cdfb1fa30e3edfc0407b008fa08}} 
+void {\bfseries reset\+\_\+pred\+\_\+succ\+\_\+dep} ()
+\begin{DoxyCompactList}\small\item\em reset dependances predecessors and successors of each instructions in the BB to be able to recompute them \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a54af30c9090798026462dbd5deb2da88}\label{class_basic__block_a54af30c9090798026462dbd5deb2da88}} 
+void {\bfseries show\+\_\+succ\+\_\+dep} ()
+\begin{DoxyCompactList}\small\item\em print dependance successors of each instructions in the BB \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_af74c4eeeecfb7a3f3fddbeb2994523a4}\label{class_basic__block_af74c4eeeecfb7a3f3fddbeb2994523a4}} 
+void {\bfseries restitution} (string const)
+\begin{DoxyCompactList}\small\item\em restitute the basic block in a file \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_ad156275e42428ee703ffa0aa3e8b5bb0}\label{class_basic__block_ad156275e42428ee703ffa0aa3e8b5bb0}} 
+bool {\bfseries is\+\_\+delayed\+\_\+slot} (\mbox{\hyperlink{class_instruction}{Instruction}} $\ast$)
+\begin{DoxyCompactList}\small\item\em test if the instruction is in the delayed slots of the branch terminating the BB if any \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a0a9caa9a904adc7807e390308e7b939c}\label{class_basic__block_a0a9caa9a904adc7807e390308e7b939c}} 
+int {\bfseries nb\+\_\+cycles} ()
+\begin{DoxyCompactList}\small\item\em compute the number of cycles to execute the instruction of the basic bloc \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a2dd5a0cf5a891f5626cd7b34849ea081}\label{class_basic__block_a2dd5a0cf5a891f5626cd7b34849ea081}} 
+void {\bfseries apply\+\_\+scheduling} (list$<$ \mbox{\hyperlink{class_node__dfg}{Node\+\_\+dfg}} $\ast$ $>$ $\ast$)
+\begin{DoxyCompactList}\small\item\em change the order of instruction with the one given in the parameter list \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a800a558f4a20dfbd8528608b0fca3854}\label{class_basic__block_a800a558f4a20dfbd8528608b0fca3854}} 
+void {\bfseries reg\+\_\+rename} (list$<$ int $>$ $\ast$)
+\begin{DoxyCompactList}\small\item\em rename registers in the basic bloc using as available register numbers the ones give in the parameter list \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a1b6570f1c03c7f7435ab681c243151c9}\label{class_basic__block_a1b6570f1c03c7f7435ab681c243151c9}} 
+void {\bfseries reg\+\_\+rename} ()
+\begin{DoxyCompactList}\small\item\em rename registers in the basic bloc using available registers according to the liveness analysis ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a0f26ff105216c62082905097b5dcebd3}\label{class_basic__block_a0f26ff105216c62082905097b5dcebd3}} 
+void {\bfseries test} ()
+\begin{DoxyCompactList}\small\item\em this method is to be used to test other methods \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a7e91d5003b7941c50199ab22a8db0d17}\label{class_basic__block_a7e91d5003b7941c50199ab22a8db0d17}} 
+void {\bfseries compute\+\_\+use\+\_\+def} ()
+\begin{DoxyCompactList}\small\item\em Compute the Use and Def vectors. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a1779e77597f54e6124b392628f5c6a66}\label{class_basic__block_a1779e77597f54e6124b392628f5c6a66}} 
+void {\bfseries show\+\_\+use\+\_\+def} (void)
+\begin{DoxyCompactList}\small\item\em Display content of the Use and Def vectors. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a11eaa93c186fb46120bb6b0397e0c590}\label{class_basic__block_a11eaa93c186fb46120bb6b0397e0c590}} 
+void {\bfseries compute\+\_\+def\+\_\+liveout} ()
+\begin{DoxyCompactList}\small\item\em Compute the Def\+Live\+Out vector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_aa7053b73687159b247f03b252204bae2}\label{class_basic__block_aa7053b73687159b247f03b252204bae2}} 
+void {\bfseries show\+\_\+def\+\_\+liveout} ()
+\begin{DoxyCompactList}\small\item\em Display content of Def\+Live\+Out vector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_aa2455e1b1b8f5ac9b1c128f121fe3d67}\label{class_basic__block_aa2455e1b1b8f5ac9b1c128f121fe3d67}} 
+{\bfseries Basic\+\_\+block} ()
+\begin{DoxyCompactList}\small\item\em Constructor of a Basic Block. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a0047b58d9a30fa6eb79a87c70e9176d0}\label{class_basic__block_a0047b58d9a30fa6eb79a87c70e9176d0}} 
+{\bfseries $\sim$\+Basic\+\_\+block} ()
+\begin{DoxyCompactList}\small\item\em Destructor of a basic block. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a26c28c6f2fcd17afa65bf04e0ed75513}\label{class_basic__block_a26c28c6f2fcd17afa65bf04e0ed75513}} 
+void {\bfseries set\+\_\+head} (\mbox{\hyperlink{class_line}{Line}} $\ast$)
+\begin{DoxyCompactList}\small\item\em setter of the head of the basic block \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_ac43e4501aaa36135c87e03c00d9911ef}\label{class_basic__block_ac43e4501aaa36135c87e03c00d9911ef}} 
+void {\bfseries set\+\_\+end} (\mbox{\hyperlink{class_line}{Line}} $\ast$)
+\begin{DoxyCompactList}\small\item\em setter of the end of the basic block \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_ac299c686661c0f53733691563604fbeb}\label{class_basic__block_ac299c686661c0f53733691563604fbeb}} 
+\mbox{\hyperlink{class_line}{Line}} $\ast$ {\bfseries get\+\_\+head} ()
+\begin{DoxyCompactList}\small\item\em get the head of the basic block \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_ac61a2ac1e0ff6ab816a5438426b7dc2b}\label{class_basic__block_ac61a2ac1e0ff6ab816a5438426b7dc2b}} 
+\mbox{\hyperlink{class_line}{Line}} $\ast$ {\bfseries get\+\_\+end} ()
+\begin{DoxyCompactList}\small\item\em get the end of the basic block \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a8e279325cafff22e2805cf0bd1b2b8d0}\label{class_basic__block_a8e279325cafff22e2805cf0bd1b2b8d0}} 
+void {\bfseries set\+\_\+branch} (\mbox{\hyperlink{class_line}{Line}} $\ast$)
+\begin{DoxyCompactList}\small\item\em setter of line corresponding to the branch \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a94840ac976b27d9024f4c04efb276ac1}\label{class_basic__block_a94840ac976b27d9024f4c04efb276ac1}} 
+bool {\bfseries is\+\_\+labeled} ()
+\begin{DoxyCompactList}\small\item\em Returns true if the first line of the block is a label. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a5bdba6b1e3307dc03c38b8249c4b3fa8}\label{class_basic__block_a5bdba6b1e3307dc03c38b8249c4b3fa8}} 
+void {\bfseries set\+\_\+index} (int i)
+\begin{DoxyCompactList}\small\item\em set the index of the basic block \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a5574d52e3ecdbf36e52c42c31bfc73db}\label{class_basic__block_a5574d52e3ecdbf36e52c42c31bfc73db}} 
+int {\bfseries size} ()
+\begin{DoxyCompactList}\small\item\em returns the size (in lines) of the basic block \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_basic__block_ac5ac5a7fc0cc60f7ce94e9fa6e50d387}\label{class_basic__block_ac5ac5a7fc0cc60f7ce94e9fa6e50d387}} 
+static void {\bfseries show\+\_\+dependences} (\mbox{\hyperlink{class_instruction}{Instruction}} $\ast$, \mbox{\hyperlink{class_instruction}{Instruction}} $\ast$)
+\begin{DoxyCompactList}\small\item\em prints dependences between both instructions \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_basic__block_ad0c88635598c22445a449439c2218b0e}\label{class_basic__block_ad0c88635598c22445a449439c2218b0e}} 
+std\+::bitset$<$ NB\+\_\+\+REG $>$ {\bfseries Use}
+\begin{DoxyCompactList}\small\item\em ith element is true is Ri is used in the basic block before any potential read \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a5b360e33d27fab75b5daabfe45906170}\label{class_basic__block_a5b360e33d27fab75b5daabfe45906170}} 
+std\+::bitset$<$ NB\+\_\+\+REG $>$ {\bfseries Def}
+\begin{DoxyCompactList}\small\item\em ith element is true is Ri is defined in the basic block before any potential read \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a7374ca0fb5063df4bdb65a62af159583}\label{class_basic__block_a7374ca0fb5063df4bdb65a62af159583}} 
+std\+::bitset$<$ NB\+\_\+\+MAX\+\_\+\+BB $>$ {\bfseries Live\+In}
+\begin{DoxyCompactList}\small\item\em ith element is true is Ri is alived at the enter of the basic block \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a41e60aa2fe70c45a582bc17727dd9514}\label{class_basic__block_a41e60aa2fe70c45a582bc17727dd9514}} 
+std\+::bitset$<$ NB\+\_\+\+MAX\+\_\+\+BB $>$ {\bfseries Live\+Out}
+\begin{DoxyCompactList}\small\item\em ith element is true is Ri is alived at the enter of the basic block \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_a7001eb5477b1037001b7d23832b3878d}\label{class_basic__block_a7001eb5477b1037001b7d23832b3878d}} 
+std\+::vector$<$ int $>$ {\bfseries Def\+Live\+Out}
+\begin{DoxyCompactList}\small\item\em ieme element contient l\textquotesingle{}index de l\textquotesingle{}instruction qui définit le registre\+Ri s\textquotesingle{}il est vivant en sortie, -\/1 sinon \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_basic__block_ade622ea59ff071add6b3d5864a980020}\label{class_basic__block_ade622ea59ff071add6b3d5864a980020}} 
+std\+::bitset$<$ NB\+\_\+\+MAX\+\_\+\+BB $>$ {\bfseries Domin}
+\begin{DoxyCompactList}\small\item\em ieme element vaut vrai si le basic block i domine this \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class representing a \mbox{\hyperlink{class_basic__block}{Basic\+\_\+block}} of a fonction 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_basic__block_8h}{Basic\+\_\+block.\+h}}\end{DoxyCompactItemize}

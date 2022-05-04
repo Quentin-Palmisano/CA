@@ -1,0 +1,177 @@
+\hypertarget{_basic__block_8h_source}{}\doxysection{Basic\+\_\+block.\+h}
+\label{_basic__block_8h_source}\index{include/Basic\_block.h@{include/Basic\_block.h}}
+\mbox{\hyperlink{_basic__block_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_Basic\_block\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_Basic\_block\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_line_8h}{Line.h}}>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_instruction_8h}{Instruction.h}}>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <Enum\_type.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <bitset>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_dfg_8h}{Dfg.h}}>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_node__dfg_8h}{Node\_dfg.h}}>}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define DEBUG}}
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{class_node__dfg}{Node\_dfg}};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{31 \textcolor{keyword}{class }\mbox{\hyperlink{class_basic__block}{Basic\_block}}\{}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{public}:}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{36    \textcolor{keywordtype}{string} \mbox{\hyperlink{class_basic__block_a9c0db81ea09b9aa4e4cdb77cbaf90bdd}{get\_content}}();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{41    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_basic__block_aad79779b098ba4ccd1549a8dbbd80d7d}{display}}();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{45    \textcolor{keywordtype}{int} \mbox{\hyperlink{class_basic__block_a8cb196904537be8fb0474afce7c769c1}{get\_index}}();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{49    \mbox{\hyperlink{class_line}{Line}}* \mbox{\hyperlink{class_basic__block_abfdf95c7ebd3830eae0175da94b002b5}{get\_branch}}();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 }
+\DoxyCodeLine{54    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_basic__block_acb9b80088751bcf4329b3d1532f724ac}{set\_link\_succ\_pred}}(\mbox{\hyperlink{class_basic__block}{Basic\_block}}*);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{60    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_basic__block_a9ec82d32525f886034ab8021a79974b1}{set\_successor}}(\mbox{\hyperlink{class_basic__block}{Basic\_block}} *BB);}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{64    \mbox{\hyperlink{class_basic__block}{Basic\_block}} *\mbox{\hyperlink{class_basic__block_a1d585445c8e72ee271bd26b9aa7fe2fb}{get\_successor}}(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{70    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_basic__block_a9ca33ccefa6395a6b0b876af20a57eaa}{set\_predecessor}}(\mbox{\hyperlink{class_basic__block}{Basic\_block}} *BB);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{74    \mbox{\hyperlink{class_basic__block}{Basic\_block}} *\mbox{\hyperlink{class_basic__block_affdf409f96c9a119864c53eaed017d18}{get\_predecessor}}(\textcolor{keywordtype}{int} );}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 }
+\DoxyCodeLine{80    \textcolor{keywordtype}{int} \mbox{\hyperlink{class_basic__block_a3ccc47a22b9d5d9e932862ab37783225}{get\_nb\_succ}}();}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{84    \textcolor{keywordtype}{int} \mbox{\hyperlink{class_basic__block_ade6f71459e5b54108022a16a4a6a00cb}{get\_nb\_pred}}();}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 }
+\DoxyCodeLine{89    \textcolor{keywordtype}{int} \mbox{\hyperlink{class_basic__block_ad3d770c77ba92d455fa3430df5f16eff}{get\_nb\_inst}}();}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 }
+\DoxyCodeLine{94    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_basic__block_ae53d18eb1436d162ee9ae565c46b35e5}{link\_instructions}}();}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 }
+\DoxyCodeLine{100    \mbox{\hyperlink{class_instruction}{Instruction}}* \mbox{\hyperlink{class_basic__block_aafb3fa0083e9176eb04c3a9f93d117e2}{get\_first\_instruction}}();}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{104    \mbox{\hyperlink{class_instruction}{Instruction}}* \mbox{\hyperlink{class_basic__block_ae0e60cf3d3ceda5870cffd91ccc8698b}{get\_last\_instruction}}();}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{108    \mbox{\hyperlink{class_instruction}{Instruction}}* \mbox{\hyperlink{class_basic__block_a6b03285ef8866859ee06220c92413f8c}{get\_instruction\_at\_index}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{112    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_basic__block_ad9a1b85a76c23cfd308971395ddbc502}{compute\_pred\_succ\_dep}}();}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 }
+\DoxyCodeLine{117    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_basic__block_a4ef46cdfb1fa30e3edfc0407b008fa08}{reset\_pred\_succ\_dep}}();}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{121    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_basic__block_a54af30c9090798026462dbd5deb2da88}{show\_succ\_dep}}();}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 }
+\DoxyCodeLine{126    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_basic__block_af74c4eeeecfb7a3f3fddbeb2994523a4}{restitution}}(\textcolor{keywordtype}{string} \textcolor{keyword}{const});   }
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 }
+\DoxyCodeLine{131    \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_basic__block_ad156275e42428ee703ffa0aa3e8b5bb0}{is\_delayed\_slot}}(\mbox{\hyperlink{class_instruction}{Instruction}}*);    }
+\DoxyCodeLine{132  }
+\DoxyCodeLine{134    \textcolor{keywordtype}{int} \mbox{\hyperlink{class_basic__block_a0a9caa9a904adc7807e390308e7b939c}{nb\_cycles}}();}
+\DoxyCodeLine{135    }
+\DoxyCodeLine{138    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_basic__block_a2dd5a0cf5a891f5626cd7b34849ea081}{apply\_scheduling}}(list<Node\_dfg*>*);}
+\DoxyCodeLine{139   }
+\DoxyCodeLine{143    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_basic__block_a800a558f4a20dfbd8528608b0fca3854}{reg\_rename}}(list<int>*);}
+\DoxyCodeLine{144   }
+\DoxyCodeLine{145 }
+\DoxyCodeLine{149    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_basic__block_a1b6570f1c03c7f7435ab681c243151c9}{reg\_rename}}();}
+\DoxyCodeLine{150   }
+\DoxyCodeLine{153    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_basic__block_a0f26ff105216c62082905097b5dcebd3}{test}}();}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 }
+\DoxyCodeLine{159    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_basic__block_a7e91d5003b7941c50199ab22a8db0d17}{compute\_use\_def}}();}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{164    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_basic__block_a1779e77597f54e6124b392628f5c6a66}{show\_use\_def}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{169    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_basic__block_a11eaa93c186fb46120bb6b0397e0c590}{compute\_def\_liveout}}();}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171 }
+\DoxyCodeLine{175    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_basic__block_aa7053b73687159b247f03b252204bae2}{show\_def\_liveout}}();}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{180    std::bitset<NB\_REG> \mbox{\hyperlink{class_basic__block_ad0c88635598c22445a449439c2218b0e}{Use}};}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{184    std::bitset<NB\_REG> \mbox{\hyperlink{class_basic__block_a5b360e33d27fab75b5daabfe45906170}{Def}};}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{188    std::bitset<NB\_MAX\_BB> \mbox{\hyperlink{class_basic__block_a7374ca0fb5063df4bdb65a62af159583}{LiveIn}};}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{192    std::bitset<NB\_MAX\_BB> \mbox{\hyperlink{class_basic__block_a41e60aa2fe70c45a582bc17727dd9514}{LiveOut}};}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{196    std::vector<int> \mbox{\hyperlink{class_basic__block_a7001eb5477b1037001b7d23832b3878d}{DefLiveOut}};}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{201    std::bitset<NB\_MAX\_BB> \mbox{\hyperlink{class_basic__block_ade622ea59ff071add6b3d5864a980020}{Domin}}; }
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205   }
+\DoxyCodeLine{208    \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_basic__block_ac5ac5a7fc0cc60f7ce94e9fa6e50d387}{show\_dependences}}(\mbox{\hyperlink{class_instruction}{Instruction}}*, \mbox{\hyperlink{class_instruction}{Instruction}}*);}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{212    \mbox{\hyperlink{class_basic__block_aa2455e1b1b8f5ac9b1c128f121fe3d67}{Basic\_block}}();}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{216    \mbox{\hyperlink{class_basic__block_a0047b58d9a30fa6eb79a87c70e9176d0}{\string~Basic\_block}}();}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218    }
+\DoxyCodeLine{221    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_basic__block_a26c28c6f2fcd17afa65bf04e0ed75513}{set\_head}}(\mbox{\hyperlink{class_line}{Line}} *);}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{225    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_basic__block_ac43e4501aaa36135c87e03c00d9911ef}{set\_end}}(\mbox{\hyperlink{class_line}{Line}} *);}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{229    \mbox{\hyperlink{class_line}{Line}}* \mbox{\hyperlink{class_basic__block_ac299c686661c0f53733691563604fbeb}{get\_head}}();}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{233    \mbox{\hyperlink{class_line}{Line}}* \mbox{\hyperlink{class_basic__block_ac61a2ac1e0ff6ab816a5438426b7dc2b}{get\_end}}();}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{237    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_basic__block_a8e279325cafff22e2805cf0bd1b2b8d0}{set\_branch}}(\mbox{\hyperlink{class_line}{Line}} *);}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239 }
+\DoxyCodeLine{242    \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_basic__block_a94840ac976b27d9024f4c04efb276ac1}{is\_labeled}}();}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{246    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_basic__block_a5bdba6b1e3307dc03c38b8249c4b3fa8}{set\_index}}(\textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249 }
+\DoxyCodeLine{252    \textcolor{keywordtype}{int} \mbox{\hyperlink{class_basic__block_a5574d52e3ecdbf36e52c42c31bfc73db}{size}}();  }
+\DoxyCodeLine{253 }
+\DoxyCodeLine{254 \textcolor{keyword}{private}:}
+\DoxyCodeLine{255    }
+\DoxyCodeLine{256   }
+\DoxyCodeLine{257    \mbox{\hyperlink{class_line}{Line}} *\_head;}
+\DoxyCodeLine{258    \mbox{\hyperlink{class_line}{Line}} *\_end;}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260    \mbox{\hyperlink{class_instruction}{Instruction}} *\_firstInst;}
+\DoxyCodeLine{261    \mbox{\hyperlink{class_instruction}{Instruction}} *\_lastInst;}
+\DoxyCodeLine{262 }
+\DoxyCodeLine{263    \mbox{\hyperlink{class_line}{Line}} *\_branch;}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265    \textcolor{keywordtype}{int} \_index;}
+\DoxyCodeLine{266    \textcolor{keywordtype}{int} \_nb\_instr;}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268    \textcolor{keywordtype}{bool} use\_def\_done;}
+\DoxyCodeLine{269    \textcolor{keywordtype}{bool} dep\_done;}
+\DoxyCodeLine{270   }
+\DoxyCodeLine{271    list <Basic\_block *> \_succ;}
+\DoxyCodeLine{272    list <Basic\_block *> \_pred;}
+\DoxyCodeLine{273    }
+\DoxyCodeLine{274     }
+\DoxyCodeLine{275   }
+\DoxyCodeLine{278    \mbox{\hyperlink{class_line}{Line}}* get\_first\_line\_instruction();}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280   }
+\DoxyCodeLine{281 \};}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

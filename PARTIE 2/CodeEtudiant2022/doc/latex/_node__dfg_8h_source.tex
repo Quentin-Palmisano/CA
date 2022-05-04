@@ -1,0 +1,85 @@
+\hypertarget{_node__dfg_8h_source}{}\doxysection{Node\+\_\+dfg.\+h}
+\label{_node__dfg_8h_source}\index{include/Node\_dfg.h@{include/Node\_dfg.h}}
+\mbox{\hyperlink{_node__dfg_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_Node\_dfg\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_Node\_dfg\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_basic__block_8h}{Basic\_block.h}}>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_label_8h}{Label.h}}>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <Enum\_type.h>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{class_node__dfg}{Node\_dfg}};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{24 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{25     \textcolor{keywordtype}{int} \mbox{\hyperlink{_instruction_8h_a51ba1f2ef8910a3a40a3bf9923286e7c}{delai}};}
+\DoxyCodeLine{26     t\_Dep \mbox{\hyperlink{structdep}{dep}};}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_node__dfg}{Node\_dfg}} *next;}
+\DoxyCodeLine{28 \}\mbox{\hyperlink{struct_arc__t}{Arc\_t}};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{class }\mbox{\hyperlink{class_node__dfg}{Node\_dfg}}\{}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{public}:}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{36     \mbox{\hyperlink{class_node__dfg_ac9b79961aaadf29eecd03b227b4c0875}{Node\_dfg}}(\mbox{\hyperlink{class_instruction}{Instruction}}*);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{40     \mbox{\hyperlink{class_node__dfg_a0a2a7c4634ad6802e7c69ab0d95957fa}{\string~Node\_dfg}}();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{44     \mbox{\hyperlink{struct_arc__t}{Arc\_t}} *\mbox{\hyperlink{class_node__dfg_a2e33f68e052715bab5e76d80836ddfa8}{get\_arc}}(\textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} remove\_arc(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} remove\_pred(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{48     list<Arc\_t*>::iterator arcs\_begin();}
+\DoxyCodeLine{49     list<Arc\_t*>::iterator arcs\_end();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 }
+\DoxyCodeLine{54     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_node__dfg_a85d42a5cc1d6feacf403a8569a813074}{get\_nb\_arcs}}();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{58     \mbox{\hyperlink{class_instruction}{Instruction}} *\mbox{\hyperlink{class_node__dfg_a5e5bc799edd99b00c2c3c97576e6812e}{get\_instruction}}();}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_node__dfg_add9d669804bc8ad4a4b806221d9ef9e9}{add\_successeur}}(\mbox{\hyperlink{struct_arc__t}{Arc\_t}}*);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_node__dfg_a8cc89b32dbe15bcf399725955a643551}{add\_predecesseur}}(\mbox{\hyperlink{class_node__dfg}{Node\_dfg}}*);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{70     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_node__dfg_adef5e6e3362133f6adb38d404c8d8cf6}{nb\_preds}}();}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{comment}{// iterateurs sur les noeuds predecesseurs }}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     list<Node\_dfg*>::iterator pred\_begin();}
+\DoxyCodeLine{75     list<Node\_dfg*>::iterator pred\_end();}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{79     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_node__dfg_a83747917d9c87b11633779731bcda162}{set\_instruction}}( \mbox{\hyperlink{class_instruction}{Instruction}}* );}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     \textcolor{keywordtype}{int} compute\_weight();}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{85     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_node__dfg_af23f48b1521a90178cc5c9a59da3ab3c}{set\_weight}}( \textcolor{keywordtype}{int} );}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{89     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_node__dfg_a561e80f51cb9a71b22f22e8d2e6685de}{get\_weight}}( );}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \textcolor{keywordtype}{int} compute\_nb\_descendant(\textcolor{keywordtype}{int} nb\_instr, \textcolor{keywordtype}{int} *deja\_comptes);}
+\DoxyCodeLine{94     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_node__dfg_a9aa775f727e6c542cd714894219046f3}{set\_nb\_descendant}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{98     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_node__dfg_a9baa0a6be056b7d1ee290c404f2216f5}{get\_nb\_descendant}}();}
+\DoxyCodeLine{99     }
+\DoxyCodeLine{100     \textcolor{keywordtype}{void} set\_tready(\textcolor{keywordtype}{int} t);}
+\DoxyCodeLine{101     \textcolor{keywordtype}{int} get\_tready();}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{keyword}{private}:}
+\DoxyCodeLine{104     list <Arc\_t *> \_arc; \textcolor{comment}{//liste d'arc associes au noeud}}
+\DoxyCodeLine{105     list <Node\_dfg *> \_pred; \textcolor{comment}{//liste des noeuds pred}}
+\DoxyCodeLine{106     \mbox{\hyperlink{class_instruction}{Instruction}} * \_inst; \textcolor{comment}{//instruction du noeud}}
+\DoxyCodeLine{107     \textcolor{keywordtype}{int} \_nbr\_descendant; \textcolor{comment}{// nombre de descendants}}
+\DoxyCodeLine{108     \textcolor{keywordtype}{int} \_poids;   \textcolor{comment}{// poids dans le chemin critique}}
+\DoxyCodeLine{109     \textcolor{keywordtype}{int} \_tready;}
+\DoxyCodeLine{110     }
+\DoxyCodeLine{111 \};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

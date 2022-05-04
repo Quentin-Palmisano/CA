@@ -1,0 +1,100 @@
+\hypertarget{class_function}{}\doxysection{Function Class Reference}
+\label{class_function}\index{Function@{Function}}
+
+
+class representing a \mbox{\hyperlink{class_function}{Function}} in a program  
+
+
+
+
+{\ttfamily \#include $<$Function.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_function_ae206568fd4fd4c885e3ccff76345c4e6}\label{class_function_ae206568fd4fd4c885e3ccff76345c4e6}} 
+{\bfseries Function} ()
+\begin{DoxyCompactList}\small\item\em Constructor of a function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_a3b03f7cf0b75d16edebdda1dee1db6fd}\label{class_function_a3b03f7cf0b75d16edebdda1dee1db6fd}} 
+{\bfseries $\sim$\+Function} ()
+\begin{DoxyCompactList}\small\item\em Destructor of a function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_ad180cc43d0d7bb5e4b2cf5242c734d3c}\label{class_function_ad180cc43d0d7bb5e4b2cf5242c734d3c}} 
+string {\bfseries get\+\_\+name} ()
+\begin{DoxyCompactList}\small\item\em returns the label of the function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_a67ffa7175c8ab513df6db299b877ad97}\label{class_function_a67ffa7175c8ab513df6db299b877ad97}} 
+void {\bfseries set\+\_\+head} (\mbox{\hyperlink{class_line}{Line}} $\ast$)
+\begin{DoxyCompactList}\small\item\em setter of the head of the function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_af5b88d118098c4cd6e5e3a4d324b8b48}\label{class_function_af5b88d118098c4cd6e5e3a4d324b8b48}} 
+void {\bfseries set\+\_\+end} (\mbox{\hyperlink{class_line}{Line}} $\ast$)
+\begin{DoxyCompactList}\small\item\em setter of the end of the function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_a5eacb2e975d8b8fc774acf72cf40f7f2}\label{class_function_a5eacb2e975d8b8fc774acf72cf40f7f2}} 
+\mbox{\hyperlink{class_line}{Line}} $\ast$ {\bfseries get\+\_\+head} ()
+\begin{DoxyCompactList}\small\item\em get the head of the function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_a0da14d0273650a80457e1e8abd1b5e79}\label{class_function_a0da14d0273650a80457e1e8abd1b5e79}} 
+\mbox{\hyperlink{class_basic__block}{Basic\+\_\+block}} $\ast$ {\bfseries get\+\_\+first\+BB} ()
+\begin{DoxyCompactList}\small\item\em get the first BB of the function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_af9429f4d792e48e2e9c5d168f15db40d}\label{class_function_af9429f4d792e48e2e9c5d168f15db40d}} 
+\mbox{\hyperlink{class_line}{Line}} $\ast$ {\bfseries get\+\_\+end} ()
+\begin{DoxyCompactList}\small\item\em get the ending \mbox{\hyperlink{class_line}{Line}} of the function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_ade8a6050da83010be473a6581d65a3ce}\label{class_function_ade8a6050da83010be473a6581d65a3ce}} 
+void {\bfseries display} ()
+\begin{DoxyCompactList}\small\item\em display the function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_a0b62379b4e18c9440963b54d2e8991b0}\label{class_function_a0b62379b4e18c9440963b54d2e8991b0}} 
+int {\bfseries size} ()
+\begin{DoxyCompactList}\small\item\em get number of Lines of the function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_acd08be840c48abd3c0c0c20ca4b5192a}\label{class_function_acd08be840c48abd3c0c0c20ca4b5192a}} 
+void {\bfseries restitution} (string const)
+\begin{DoxyCompactList}\small\item\em restitute the function in a file \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_a5b1550f534becc9b7ae9fe679fc8db10}\label{class_function_a5b1550f534becc9b7ae9fe679fc8db10}} 
+void {\bfseries add\+\_\+\+BB} (\mbox{\hyperlink{class_line}{Line}} $\ast$, \mbox{\hyperlink{class_line}{Line}} $\ast$, \mbox{\hyperlink{class_line}{Line}} $\ast$, int)
+\begin{DoxyCompactList}\small\item\em creates a new BB with the given start line, end line and branch line and its index, add it to the BB list of this. Branch line must be set to nullptr if the BB does not end with a branch (or jump or call instruction). Otherwise it must be set to the line of the branch. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_a199e58ed4b4ea79161fc6c85b8b0374c}\label{class_function_a199e58ed4b4ea79161fc6c85b8b0374c}} 
+void {\bfseries compute\+\_\+basic\+\_\+block} ()
+\begin{DoxyCompactList}\small\item\em Calculate the basics bolck of the function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_a4ddde4ac1ff488dfcbfcaee71f727a48}\label{class_function_a4ddde4ac1ff488dfcbfcaee71f727a48}} 
+int {\bfseries nbr\+\_\+\+BB} ()
+\begin{DoxyCompactList}\small\item\em get the number of Basic block in the function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_a91973d6d393eea0d566870d8353ab580}\label{class_function_a91973d6d393eea0d566870d8353ab580}} 
+\mbox{\hyperlink{class_basic__block}{Basic\+\_\+block}} $\ast$ {\bfseries get\+\_\+\+BB} (int)
+\begin{DoxyCompactList}\small\item\em get the Basic Block at a position in the BB list \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_acf545ce6670e05236c9f6f851e3a8e86}\label{class_function_acf545ce6670e05236c9f6f851e3a8e86}} 
+void {\bfseries compute\+\_\+label} ()
+\begin{DoxyCompactList}\small\item\em comput labels of the function in list \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_a90e82005f98aaef8154fd409660afd6f}\label{class_function_a90e82005f98aaef8154fd409660afd6f}} 
+\mbox{\hyperlink{class_label}{Label}} $\ast$ {\bfseries get\+\_\+label} (int)
+\begin{DoxyCompactList}\small\item\em get a specific label of the function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_a3f3807e12e695ffe23e1ef44edcd262b}\label{class_function_a3f3807e12e695ffe23e1ef44edcd262b}} 
+int {\bfseries nbr\+\_\+label} ()
+\begin{DoxyCompactList}\small\item\em get the size of the list label \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_ab9eb0c94f1506b8cb8a784b3a3c73d9a}\label{class_function_ab9eb0c94f1506b8cb8a784b3a3c73d9a}} 
+\mbox{\hyperlink{class_basic__block}{Basic\+\_\+block}} $\ast$ {\bfseries find\+\_\+label\+\_\+\+BB} (\mbox{\hyperlink{class_o_p_label}{OPLabel}} $\ast$)
+\begin{DoxyCompactList}\small\item\em Get the basic block that starts with a given label (operand) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_a069fc0216ccbc9e3e1a36825f8ce1e31}\label{class_function_a069fc0216ccbc9e3e1a36825f8ce1e31}} 
+void {\bfseries compute\+\_\+succ\+\_\+pred\+\_\+\+BB} ()
+\begin{DoxyCompactList}\small\item\em Computes the successors and predecessors of each basic block. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_a9ecf8e774164937c3dfdb989ebe1c866}\label{class_function_a9ecf8e774164937c3dfdb989ebe1c866}} 
+void {\bfseries compute\+\_\+dom} ()
+\begin{DoxyCompactList}\small\item\em computes dominators for each basic block \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_a20c7a6df3cb39a134fe5dcc9749bdf2e}\label{class_function_a20c7a6df3cb39a134fe5dcc9749bdf2e}} 
+void {\bfseries compute\+\_\+loops} ()
+\begin{DoxyCompactList}\small\item\em computes loops inside the function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_a93ab02fb20a2d5d573f930a111db84f5}\label{class_function_a93ab02fb20a2d5d573f930a111db84f5}} 
+void {\bfseries display\+\_\+loops} ()
+\begin{DoxyCompactList}\small\item\em show the loops of the function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_a21b614fb69692ba00240831c8fe8beb9}\label{class_function_a21b614fb69692ba00240831c8fe8beb9}} 
+void {\bfseries compute\+\_\+live\+\_\+var} ()
+\begin{DoxyCompactList}\small\item\em computes alive variables for each basic block \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_a970520528e3f91736849ca773d6e6bff}\label{class_function_a970520528e3f91736849ca773d6e6bff}} 
+void {\bfseries show\+\_\+live\+\_\+var} ()
+\begin{DoxyCompactList}\small\item\em display alive variables for each basic block \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_function_aaa0d06640a5075c416106a88bd9a833a}\label{class_function_aaa0d06640a5075c416106a88bd9a833a}} 
+void {\bfseries test} ()
+\begin{DoxyCompactList}\small\item\em method to perform some test, usefull for testing methods on basic blocks \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class representing a \mbox{\hyperlink{class_function}{Function}} in a program 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_function_8h}{Function.\+h}}\end{DoxyCompactItemize}
