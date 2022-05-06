@@ -1,4 +1,5 @@
 #include <Loop.h>
+#include <algorithm>
 
 
 Loop::Loop(Basic_block *bb1, Basic_block *bb2, unsigned int id):header_bb(bb1), latch_bb(bb2), loop_id(id){}
@@ -48,9 +49,24 @@ int Loop::nbr_BB(){
 }
 
 
+void Loop::compute_in_loop_BB_aux(Basic_block *b){
+  for(int i = 0; i<b->get_nb_pred(); i++) {
+    auto p = b->get_predecessor(i);
+    if(find(_myBB.begin(), _myBB.end(), p) == _myBB.end() && p != get_header()){
+      _myBB.push_back(p);
+      compute_in_loop_BB_aux(p);
+    }
+  }
+  return;
+}
+
+
 void Loop::compute_in_loop_BB(){
   
   /* A REMPLIR */ 
- 
+  _myBB.push_back(get_latch());
+  compute_in_loop_BB_aux(get_latch());
+  _myBB.push_back(get_header());
+
   return;
 }

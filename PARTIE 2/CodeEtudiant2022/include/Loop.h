@@ -98,6 +98,8 @@ private:
 
 	list <Basic_block*> _myBB;
 
+	void compute_in_loop_BB_aux(Basic_block *);
+
 };
 
 #endif
