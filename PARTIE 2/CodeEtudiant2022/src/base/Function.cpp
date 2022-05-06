@@ -280,9 +280,9 @@ void Function::compute_succ_pred_BB(){
   
   if (BB_pred_succ) return; // on ne le fait qu'une fois 
   
-  if (!BB_computed) 
+  if (!BB_computed)
     compute_basic_block();
-  if (!label_computed) 
+  if (!label_computed)
     compute_label();
  
  
@@ -290,18 +290,24 @@ void Function::compute_succ_pred_BB(){
    
   for (auto bb: _myBB){ // parcours tous les BB de _myBB
     Instruction *instr;
-    Basic_block *succ=nullptr;
      
     /*  A REMPLIR */
     Line *branch = bb->get_branch();
     if ( branch != nullptr ) {
       instr = getInst(branch);
-      if ( instr->is_indirect_branch() ) {
-       bb->set_link_succ_pred(find_label_BB(instr->get_op_label()));
-     } else if ( instr->is_cond_branch() ) {
-      bb->set_link_succ_pred(find_label_BB(instr->get_op_label()));
+      
+      if ( instr->is_cond_branch() ) {
+        bb->set_link_succ_pred(find_label_BB(instr->get_op_label()));
+        bb->set_link_succ_pred(get_BB(bb->get_index()+1));
+      } else if(instr->is_call() || instr->is_syscall()) {
+        bb->set_link_succ_pred(get_BB(bb->get_index()+1));
+      } else if(instr->is_indirect_branch()) {
+      
+      } else {
+        bb->set_link_succ_pred(find_label_BB(instr->get_op_label()));
+      }
+    } else {
       bb->set_link_succ_pred(get_BB(bb->get_index()+1));
-     }
     }
     /*FIN A REMPLIR */ 
 
@@ -320,13 +326,56 @@ void Function::compute_dom(){
  
    // on peut r�cup�rer les BB de la fonction avec la m�thode get_BB(num du BB) pour tous les num�ros de BB entre 0 et nbBB-1.
 
-  list<Basic_block*> workinglist; // liste de travail  
+  list<Basic_block*> workinglist; // liste de travail
   bool change = true;  // pour it�rer tant que pas de point fixe
  
   /* A REMPLIR */
  
+  for(auto bb : _myBB) {
+    
+    if(bb == get_firstBB()) {
+      bb->Domin.none();
+      workinglist.push_back(bb);
+    } else {
+      bb->Domin.all();
+    }
+    
+  }
   
-
+  std::bitset<NB_MAX_BB> T;
+  
+  while(!workinglist.empty()) {
+    change = false;
+    auto bb = workinglist.front();
+    workinglist.pop_front();
+    
+    if(bb == get_firstBB()) {
+      T.reset();
+    } else {
+      T.set();
+    }
+    
+    
+    for(int i = 0; i<bb->get_nb_pred(); i++) {
+      auto p = bb->get_predecessor(i);
+      T &= p->Domin;
+    }
+    T.set(bb->get_index());
+    
+    if(bb->Domin != T) {
+      bb->Domin = T;
+      change = true;
+    }
+    
+    if(change) {
+      for(int i = 0; i<bb->get_nb_succ(); i++) {
+        auto s = bb->get_successor(i);
+        workinglist.push_back(s);
+      }
+    }
+    
+  }
+  
 
   // affichage du resultat
   

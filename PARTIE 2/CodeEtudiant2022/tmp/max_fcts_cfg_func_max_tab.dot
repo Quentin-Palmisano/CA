@@ -1,4 +1,0 @@
-digraph G1 {
-node [shape = box];
-BB0 [label = "BB0\nmax_tab:\laddiu $29,$29,-8\lsw $4,8($29)\lsw $5,12($29)\laddiu $2,$0,-1\lsw $2,4($29)\lsw $0,0($29)\lj $l10\ladd $0,$0,$0\l"] ;
-BB0 -> EXIT  [style = filled, label = ""];

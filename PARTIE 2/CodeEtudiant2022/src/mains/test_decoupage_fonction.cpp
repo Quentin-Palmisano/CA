@@ -32,7 +32,7 @@ int main(int argc, char ** argv){
   
   Program prog(argv[1]) ;
   // Decommenter ci-dessous pour voir le programme complet, mais identique au renommage près des macro-instructions au fichier ASM 
-  // prog.display() ;
+  //prog.display() ;
 
   prog.compute_function();
   cout << "Fichier " << argv[1]  << ": nb functions = " << prog.nbr_func() << endl;

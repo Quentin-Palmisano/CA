@@ -340,7 +340,7 @@ bool Instruction::is_dep_MEM(Instruction *i2){
 	|| (is_mem_store() && get_reg_src2()->get_reg_num() == 29)) && 
        ((i2->is_mem_load() && i2->get_reg_src1()->get_reg_num() == 29) || 
        (i2->is_mem_store() && i2->get_reg_src2()->get_reg_num() == 29)) ) */
-  if ( (is_mem_load() && i2->is_mem_load() && get_reg_src1()->get_reg_num() == i2->get_reg_src1()->get_reg_num()) ||
+  if ( (is_mem_load() && i2->is_mem_store() && get_reg_src1()->get_reg_num() == i2->get_reg_src2()->get_reg_num()) ||
        (is_mem_store() && i2->is_mem_load() && get_reg_src2()->get_reg_num() == i2->get_reg_src1()->get_reg_num()) ||    
        (is_mem_store() && i2->is_mem_store() && get_reg_src2()->get_reg_num() == i2->get_reg_src2()->get_reg_num()))
     {
