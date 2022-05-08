@@ -427,6 +427,8 @@ void Function::compute_live_var(){
 
   list<Basic_block*> workinglist;
 
+  
+
   /* A REMPLIR avec algo vu en cours et en TD : algorithme it�ratif qui part des blocs sans successeur */
 
   /* Lorsque l'on sort d'une fonction (BB sans successeur et se terminant par jr $31) le registre $2 contient le r�sultat, il est donc vivant en sortie du bloc ; le registre pointeur de pile ($29) est aussi vivant */
@@ -435,7 +437,30 @@ void Function::compute_live_var(){
   /* Lorsqu'un bloc se termine par un appel syst�me (syscall), les registres $4, $5, $6, $7 et $2 sont vivants en sortie du bloc, car ils contiennent potentiellement les param�tres + le num�ro de l'appel syst�me */
   /* il faut donc initialiser correctement les LiveOut pour ces blocs avant de faire le calcul des registres vivants */
 
- 
+  for (auto bb: _myBB){
+    
+    if(bb->get_nb_succ()==0){
+      workinglist.push_back(bb);
+    }
+  }
+
+  while(!workinglist.empty()){
+    auto bb = workinglist.front();
+    for(int j=0; j<bb->get_nb_succ(); j++){
+      auto succ = bb->get_successor(j);
+      for(int k=0; k<succ->LiveIn.size(); k++){
+        if(succ->LiveIn[k])bb->LiveOut.set(k);
+      }
+    }
+    for(int j=0; j<bb->get_nb_pred(); j++){
+      workinglist.push_back(bb->get_predecessor(j));
+    }
+    for(int k=0; k<bb->LiveIn.size(); k++){
+      if(bb->Use[k] || bb->LiveOut[k] && !bb->Def[k])bb->LiveIn.set(k);
+    }
+
+    workinglist.pop_front();
+  }
   
 }
 
