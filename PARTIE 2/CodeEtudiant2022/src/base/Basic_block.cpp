@@ -486,14 +486,15 @@ void Basic_block::compute_use_def(void){
      OPRegister *src1 = inst->get_reg_src1();
      OPRegister *src2 = inst->get_reg_src2();
      OPRegister *dest = inst->get_reg_dst();
-     if(dest!=nullptr && !Def[dest->get_reg_num()] && dest->get_reg_num()!=0){
-        Def.set(dest->get_reg_num());
-     }
+     
      if(src1!=nullptr && !Def[src1->get_reg_num()] && src1->get_reg_num()!=0){
         Use.set(src1->get_reg_num());
      }
      if(src2!=nullptr && !Def[src2->get_reg_num()] && src2->get_reg_num()!=0){
         Use.set(src2->get_reg_num());
+     }
+     if(dest!=nullptr && !Def[dest->get_reg_num()] && dest->get_reg_num()!=0){
+       Def.set(dest->get_reg_num());
      }
   }
 
@@ -584,6 +585,7 @@ void Basic_block::apply_scheduling(list <Node_dfg*> *new_order){
    Instruction *inst=(*it)->get_instruction();
    Line *n = _head, *prevn = nullptr;
    Line *end_next = _end->get_next();
+   
    if(!n){
       cout<<"wrong bb : cannot apply"<<endl;
       return;

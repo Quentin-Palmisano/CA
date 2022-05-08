@@ -446,20 +446,28 @@ void Function::compute_live_var(){
 
   while(!workinglist.empty()){
     auto bb = workinglist.front();
+    
+    bb->compute_use_def();
+    
     for(int j=0; j<bb->get_nb_succ(); j++){
       auto succ = bb->get_successor(j);
       for(int k=0; k<succ->LiveIn.size(); k++){
-        if(succ->LiveIn[k])bb->LiveOut.set(k);
+        if(succ->LiveIn[k]) {
+          bb->LiveOut.set(k);
+        }
       }
     }
-    for(int j=0; j<bb->get_nb_pred(); j++){
-      workinglist.push_back(bb->get_predecessor(j));
-    }
+    
     for(int k=0; k<bb->LiveIn.size(); k++){
-      if(bb->Use[k] || bb->LiveOut[k] && !bb->Def[k])bb->LiveIn.set(k);
+      if(bb->Use[k] || (bb->LiveOut[k] && !bb->Def[k])) {
+        bb->LiveIn.set(k);
+      }
     }
 
     workinglist.pop_front();
+    for(int j=0; j<bb->get_nb_pred(); j++){
+      workinglist.push_back(bb->get_predecessor(j));
+    }
   }
   
 }
