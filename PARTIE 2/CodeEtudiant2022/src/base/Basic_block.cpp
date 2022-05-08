@@ -348,7 +348,40 @@ void Basic_block::compute_pred_succ_dep(){
   link_instructions(); // essentiel pour avoir un lien entre les instructions
   if (dep_done) return;
   
-   /* A REMPLIR */
+  /* A REMPLIR */
+
+  for(int i = 0; i<get_nb_inst(); i++) {
+    auto inst = get_instruction_at_index(i);
+     
+    for(int j = i+1; j < get_nb_inst(); j++) {
+      auto other = get_instruction_at_index(j);
+      
+      if(inst->is_dep_RAW(other)) {
+        add_dep_link(inst, other, t_Dep::RAW);
+      } if(inst->is_dep_WAR(other)) {
+        add_dep_link(inst, other, t_Dep::WAR);
+      } if(inst->is_dep_WAW(other)) {
+        add_dep_link(inst, other, t_Dep::WAW);
+      } if(inst->is_strict_dep_MEM(other)) {
+        add_dep_link(inst, other, t_Dep::MEMDEP);
+      }
+      
+    }
+    
+  }
+  
+  auto branch = get_branch();
+  
+  if(branch) {
+    for(int i = 0; i<get_nb_inst()-2; i++) {
+      auto inst = get_instruction_at_index(i);
+      
+      if(inst->get_nb_succ() == 0) {
+        add_dep_link(inst, getInst(branch), t_Dep::CONTROL);
+      }
+      
+    }
+  }
 
  
    // NE PAS ENLEVER : cette fonction ne doit être appelée qu'une seule fois
@@ -402,7 +435,13 @@ int Basic_block::nb_cycles(){
    while(ic){   
 
      /* A REMPLIR */
-  
+     
+     for(int i = 0; i<ic->get_nb_pred(); i++) {
+       auto dep = ic->get_pred_dep(i);
+       if(dep->type == t_Dep::RAW) {
+       
+       }
+     }
     
      /* FIN A REMPLIR */
 #ifdef DEBUG     

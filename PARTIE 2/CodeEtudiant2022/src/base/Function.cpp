@@ -222,7 +222,7 @@ void Function::compute_basic_block(){
        }
        if( getInst(current)->is_branch() ) {
         saut = current;
-        current = current->get_next();
+        current = current->get_next(); // delayed slot
         add_BB( debut, current, saut, bb_num++);
         debut = nullptr;
         saut = nullptr;
@@ -403,9 +403,9 @@ void Function::compute_loops(){
   for (auto bb: _myBB){
     for (int i = 0; i < bb->get_nb_succ(); i++) {
       if (bb->Domin[bb->get_successor(i)->get_index()]) {// arc arri�re
-	Loop * loop = new Loop(bb->get_successor(i), bb, index++);
-	loop -> compute_in_loop_BB();
-	_myLoop.push_back(loop);
+        Loop * loop = new Loop(bb->get_successor(i), bb, index++);
+        loop -> compute_in_loop_BB();
+        _myLoop.push_back(loop);
       }
     }
   }
