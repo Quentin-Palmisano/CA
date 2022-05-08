@@ -220,21 +220,21 @@ void Program::compute_function(){
 
    while(current != nullptr){   
       if(current->isDirective()){
-	 d = getDirective(current);
-	 direct=d->get_content();
-	 if(direct.size() !=0){
-	    if( direct.compare(0, 4, ".ent")==0){
-	       element_debut=current;
-	    }
-	    if( direct.compare(0, 4, ".end")==0){
-	       func = new Function();
-	       func->set_head(element_debut);
-	       func->set_end(current);
-	       element_debut=nullptr;
-	       //func -> display();
-	       _myfunc.push_back(func);
-	    }
-	 }
+         d = getDirective(current);
+         direct=d->get_content();
+         if(direct.size() !=0){
+            if( direct.compare(0, 4, ".ent")==0){
+               element_debut=current;
+            }
+            if( direct.compare(0, 4, ".end")==0){
+               func = new Function();
+               func->set_head(element_debut);
+               func->set_end(current);
+               element_debut=nullptr;
+               //func -> display();
+               _myfunc.push_back(func);
+            }
+         }
       }
 
       if(current->get_next()==nullptr)	

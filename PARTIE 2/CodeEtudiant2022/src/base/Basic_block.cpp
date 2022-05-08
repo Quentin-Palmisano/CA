@@ -425,28 +425,32 @@ int Basic_block::nb_cycles(){
   compute_pred_succ_dep(); // besoin d'avoir les dépendances entre instruction
 
   /* tableau ci-dessous utile pour savoir pour chaque instruction quand elle sort pour en déduire les cycles qu'elle peut induire avec les instructions qui en dépendent, initialisation à -1  */
-   vector<int> inst_cycle(get_nb_inst()); 
+   vector<int> inst_cycle(get_nb_inst());
    for (int i=0; i< get_nb_inst(); i++ ){
      inst_cycle[i] = -1;
    }
    
    Instruction *ic = get_first_instruction();
-   int exect = 0;  
-   while(ic){   
+   int exect = 0;
+   while(ic){
 
      /* A REMPLIR */
+     
+     exect++;
      
      for(int i = 0; i<ic->get_nb_pred(); i++) {
        auto dep = ic->get_pred_dep(i);
        if(dep->type == t_Dep::RAW) {
-       
+         exect = max(exect, inst_cycle[dep->inst->get_index()] + delai(dep->inst->get_type(), ic->get_type()));
        }
      }
-    
+     
+     inst_cycle[ic->get_index()] = exect;
+     
      /* FIN A REMPLIR */
-#ifdef DEBUG     
-     cout << endl << "inst " << ic -> get_index() << " " << ic-> get_content () << " cycle "<< inst_cycle[ic->get_index()] ;
-#endif 
+#ifdef DEBUG
+     cout << endl << "inst " << ic -> get_index() << " " << ic-> get_content () << " cycle "<< inst_cycle[ic->get_index()];
+#endif
      ic = ic->get_next();
    }
 
