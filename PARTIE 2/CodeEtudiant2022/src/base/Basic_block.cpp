@@ -510,6 +510,17 @@ Si $i est défini plusieurs fois c'est l'instruction avec l'index le plus grand
 void Basic_block::compute_def_liveout(){
   
   /* A REMPLIR */
+  
+  for(int i=0; i<get_nb_inst(); i++) {
+    auto inst = get_instruction_at_index(i);
+    auto reg = inst->get_reg_dst();
+    if(reg) {
+      DefLiveOut[reg->get_reg_num()] = i;
+    }
+    if(inst->is_call()) {
+      DefLiveOut[31] = i;
+    }
+  }
  
   return;
 }
