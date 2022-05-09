@@ -476,22 +476,25 @@ Calcule les ensembles DEF et USE n�cessaire l'analyse des registres vivants
 */
 
 void Basic_block::compute_use_def(void){
+  
   Def.reset();
   Use.reset();
 
   /* A REMPLIR */
   for(int i=0; i<this->get_nb_inst(); i++){
      Instruction *inst = this->get_instruction_at_index(i);
-     if(inst->is_call())Def.set(31);
+     if(inst->is_call()) {
+       Def.set(31);
+     }
      OPRegister *src1 = inst->get_reg_src1();
      OPRegister *src2 = inst->get_reg_src2();
      OPRegister *dest = inst->get_reg_dst();
      
      if(src1!=nullptr && !Def[src1->get_reg_num()] && src1->get_reg_num()!=0){
-        Use.set(src1->get_reg_num());
+       Use.set(src1->get_reg_num());
      }
      if(src2!=nullptr && !Def[src2->get_reg_num()] && src2->get_reg_num()!=0){
-        Use.set(src2->get_reg_num());
+       Use.set(src2->get_reg_num());
      }
      if(dest!=nullptr && !Def[dest->get_reg_num()] && dest->get_reg_num()!=0){
        Def.set(dest->get_reg_num());
@@ -532,7 +535,7 @@ void Basic_block::compute_def_liveout(){
   for(int i=0; i<get_nb_inst(); i++) {
     auto inst = get_instruction_at_index(i);
     auto reg = inst->get_reg_dst();
-    if(reg) {
+    if(reg && this->LiveOut[reg->get_reg_num()]) {
       DefLiveOut[reg->get_reg_num()] = i;
     }
     if(inst->is_call()) {
@@ -558,11 +561,43 @@ void Basic_block::show_def_liveout(){
 Utilise comme registres disponibles ceux dont le num�ro est dans la liste param�tre 
 *****/
 
-void Basic_block::reg_rename(list<int> *frees){
+void Basic_block::reg_rename(list<int> *frees) {
   compute_def_liveout();   // definition vivantes en sortie necessaires � connaitre
- 
- /* A REMPLIR */
- 
+  
+  /* A REMPLIR */
+  
+  for(int i = 0; i<get_nb_inst(); i++) {
+    auto inst = get_instruction_at_index(i);
+    auto reg = inst->get_reg_dst();
+    if(reg && DefLiveOut[reg->get_reg_num()]!=i) {
+      auto regi = reg->get_reg_num();
+      if(regi == 0 || regi >= 28) continue;
+      
+      if(frees->size() == 0) return;
+      auto newregi = frees->front();
+      frees->pop_front();
+      
+      reg->set_reg_num(newregi);
+      Def[i] = true;
+      
+      for(int j = i+1; j<get_nb_inst(); j++) {
+        auto other = get_instruction_at_index(j);
+        
+        auto read1 = other->get_reg_src1();
+        auto read2 = other->get_reg_src2();
+        
+        if(read1 && read1->get_reg_num() == regi) {
+          read1->set_reg_num(newregi);
+        }
+        if(read2 && read2->get_reg_num() == regi) read2->set_reg_num(newregi);
+        
+        auto write = other->get_reg_dst();
+        if(write && write->get_reg_num() == regi) break;
+        
+      }
+      
+    }
+  }
  
 }
 
@@ -571,11 +606,21 @@ void Basic_block::reg_rename(list<int> *frees){
 /**** renomme les registres renommables : ceux qui sont d�finis et utilis�s dans le bloc et dont la d�finition n'est pas vivante en sortie
 Utilise comme registres disponibles ceux dont le num�ro est dans la liste param�tre 
 *****/
-void Basic_block::reg_rename(){
+void Basic_block::reg_rename() {
  
   compute_def_liveout();
   
   /* A REMPLIR */
+  
+  list<int> frees;
+  
+  for(int r = 8; r<=25; r++) {
+    if(!LiveIn[r] && !Def[r]) {
+      frees.push_back(r);
+    }
+  }
+  
+  reg_rename(&frees);
  
 }
 

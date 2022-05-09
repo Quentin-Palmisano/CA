@@ -284,9 +284,7 @@ void Function::compute_succ_pred_BB(){
     compute_basic_block();
   if (!label_computed)
     compute_label();
- 
- 
-  int size= (int) _myBB.size();
+  
    
   for (auto bb: _myBB){ // parcours tous les BB de _myBB
     Instruction *instr;
@@ -334,10 +332,10 @@ void Function::compute_dom(){
   for(auto bb : _myBB) {
     
     if(bb == get_firstBB()) {
-      bb->Domin.none();
+      bb->Domin.reset();
       workinglist.push_back(bb);
     } else {
-      bb->Domin.all();
+      bb->Domin.set();
     }
     
   }
@@ -438,16 +436,33 @@ void Function::compute_live_var(){
   /* il faut donc initialiser correctement les LiveOut pour ces blocs avant de faire le calcul des registres vivants */
 
   for (auto bb: _myBB){
+    bb->compute_use_def();
     
     if(bb->get_nb_succ()==0){
       workinglist.push_back(bb);
+      bb->LiveOut[2]=true;
+      bb->LiveOut[29]=true;
     }
+    
+    if(bb->get_branch()) {
+      auto branch = getInst(bb->get_branch());
+      if(branch->is_call() || branch->is_syscall()) {
+        bb->Def[2] = true;
+        bb->LiveOut[2] = true;
+        bb->LiveOut[4] = true;
+        bb->LiveOut[5] = true;
+        bb->LiveOut[6] = true;
+        bb->LiveOut[7] = true;
+      }
+    }
+    
   }
 
   while(!workinglist.empty()){
     auto bb = workinglist.front();
     
-    bb->compute_use_def();
+    auto oldLiveIn(bb->LiveIn);
+    auto oldLiveOut(bb->LiveOut);
     
     for(int j=0; j<bb->get_nb_succ(); j++){
       auto succ = bb->get_successor(j);
@@ -465,10 +480,16 @@ void Function::compute_live_var(){
     }
 
     workinglist.pop_front();
+    
+    if(oldLiveIn == bb->LiveIn && oldLiveOut == bb->LiveOut) {
+      continue;
+    }
+    
     for(int j=0; j<bb->get_nb_pred(); j++){
       workinglist.push_back(bb->get_predecessor(j));
     }
   }
+  
   
 }
 

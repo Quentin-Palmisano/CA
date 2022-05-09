@@ -184,7 +184,7 @@ OTHER   -1   -1  -1   1   -1
 BAD     -1   -1  -1  -1   -1  
 
 */ 
-
+/*
 static std::map<t_Inst, std::map<t_Inst, int>> t_delay =
   {
     {t_Inst::ALU, { {t_Inst::ALU, 1}, {t_Inst::MEM, 1}, {t_Inst::BR, 2}, {t_Inst::OTHER, -1}, {t_Inst::BAD, -1}}},
@@ -193,7 +193,7 @@ static std::map<t_Inst, std::map<t_Inst, int>> t_delay =
     {t_Inst::OTHER, {{t_Inst::ALU, -1},{t_Inst::MEM, -1}, {t_Inst::BR, -1}, {t_Inst::OTHER, -1},{t_Inst::BAD, -1}}},
     {t_Inst::BAD, {{t_Inst::ALU, -1},{t_Inst::MEM, -1}, {t_Inst::BR, -1}, {t_Inst::OTHER, -1},{t_Inst::BAD, -1}}},
   };
-
+*/
 
 // A TESTER AUSSI 
 
@@ -207,7 +207,7 @@ OTHER   -1   -1  -1  -1   -1
 BAD     -1   -1  -1  -1   -1  
 
 */ 
-/*
+
  static std::map<t_Inst, std::map<t_Inst, int>> t_delay =
   {
     {t_Inst::ALU, { {t_Inst::ALU, 2}, {t_Inst::MEM, 2}, {t_Inst::BR, 3}, {t_Inst::OTHER, -1}, {t_Inst::BAD, -1}}},
@@ -217,7 +217,7 @@ BAD     -1   -1  -1  -1   -1
     {t_Inst::BAD, {{t_Inst::ALU, -1},{t_Inst::MEM, -1}, {t_Inst::BR, -1}, {t_Inst::OTHER, -1},{t_Inst::BAD, -1}}},
   };
 
-*/
+
 
 #endif
 
